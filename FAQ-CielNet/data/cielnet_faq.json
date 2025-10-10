@@ -1,0 +1,2875 @@
+{
+  "corpus_info": {
+    "name": "CielNet Internal FAQ Database",
+    "version": "2.3.1",
+    "generated": "2025-10-07",
+    "total_entries": 155,
+    "sections": {
+      "RH & Onboarding": 23,
+      "Support Produit": 22,
+      "Opérations & DevOps": 12,
+      "Data & RAG": 8,
+      "Sécurité & Privacy": 14,
+      "Juridique & Conformité": 6,
+      "Scénarios de démo": 25,
+      "Easter Eggs & Lore": 9,
+      "IT Accès & Auth": 20,
+      "IT Environnement de dev": 16
+    },
+    "section_sampling": {
+      "balanced_query_targets": {
+        "RH & Onboarding": 18,
+        "Support Produit": 18,
+        "Opérations & DevOps": 18,
+        "Data & RAG": 18,
+        "Sécurité & Privacy": 18,
+        "Juridique & Conformité": 18,
+        "Scénarios de démo": 18,
+        "Easter Eggs & Lore": 18,
+        "IT Accès & Auth": 18,
+        "IT Environnement de dev": 18
+      },
+      "notes": "Ces cibles homogénéisent l'échantillonnage de requêtes pour les benchmarks RAG et compensent la disparité du nombre d'entrées par section."
+    }
+  },
+  "entries": [
+    {
+      "id": "rh-001",
+      "section": "RH & Onboarding",
+      "question": "Procédure d'accueil nouveaux arrivants ?",
+      "answer": "Bienvenue chez CielNet ! Dès votre arrivée, un buddy vous est assigné, un café d'accueil avec les RH est prévu et vous repartez avec le kit de bienvenue (badge, laptop, guide). La formation sécurité reste obligatoire dans les 48 h : on aime plaisanter, mais la donnée, c'est sérieux.",
+      "confidence": "high",
+      "tags": [
+        "onboarding",
+        "accueil",
+        "nouveaux"
+      ],
+      "examples": [
+        "Commencer chez CielNet",
+        "Intégration salarié"
+      ],
+      "follow_up": "Qui contacter si l'onboarding déraille ?",
+      "search_synonyms": [
+        "intégration collaborateurs",
+        "première journée"
+      ]
+    },
+    {
+      "id": "rh-002",
+      "section": "RH & Onboarding",
+      "question": "Système de buddy ?",
+      "answer": "Pendant deux mois, un buddy expérimenté sert de guide : il vous présente l'organisation, décrypte nos rituels (pizza-code du vendredi, cafés thématiques) et partage ses astuces pour apprivoiser nos outils. Il ne fait pas votre travail, il vous aide à trouver vos repères, des salles de réunion jusqu'à la meilleure machine à café.",
+      "confidence": "high",
+      "tags": [
+        "buddy",
+        "mentorat"
+      ],
+      "examples": [
+        "Rôle parrain",
+        "Buddy répond pas"
+      ],
+      "follow_up": "Comment demander un changement de buddy ?",
+      "search_synonyms": [
+        "parrainage",
+        "mentor"
+      ]
+    },
+    {
+      "id": "rh-003",
+      "section": "RH & Onboarding",
+      "question": "Horaires de travail ?",
+      "answer": "La plage horaire officielle s'étend de 8 h à 19 h, avec un créneau de présence obligatoire entre 10 h et 16 h. Après la période d'essai, vous pouvez télétravailler jusqu'à trois jours par semaine.",
+      "confidence": "high",
+      "tags": [
+        "horaires",
+        "flexibilite"
+      ],
+      "examples": [
+        "Télétravail CielNet"
+      ],
+      "follow_up": "Comment signaler une absence ?",
+      "search_synonyms": [
+        "temps travail",
+        "remote"
+      ]
+    },
+    {
+      "id": "rh-004",
+      "section": "RH & Onboarding",
+      "question": "Poser congés/RTT ?",
+      "answer": "VacanceNet (oui, l'IA adore les jeux de mots) centralise toutes les demandes : 25 j ouvrés, jours d'ancienneté et 11 RTT. Le manager dispose de 48 h pour valider.",
+      "confidence": "high",
+      "tags": [
+        "conges",
+        "rtt"
+      ],
+      "examples": [
+        "Vacances été"
+      ],
+      "follow_up": "Que faire en cas de refus de congés ?",
+      "search_synonyms": [
+        "demande de congés"
+      ]
+    },
+    {
+      "id": "rh-005",
+      "section": "RH & Onboarding",
+      "question": "Avantages sociaux ?",
+      "answer": "Au menu : mutuelle premium, tickets resto à 9 EUR, transport remboursé à 75 %, accès TechLearn, activités sportives, Pizza-Code et café illimité pour nourrir les blagues de dev.",
+      "confidence": "high",
+      "tags": [
+        "avantages",
+        "mutuelle"
+      ],
+      "examples": [
+        "Benefits CielNet"
+      ],
+      "follow_up": "Comment s'inscrire aux activités ?",
+      "search_synonyms": [
+        "bénéfices",
+        "avantages sociaux"
+      ]
+    },
+    {
+      "id": "rh-006",
+      "section": "RH & Onboarding",
+      "question": "Budget formation ?",
+      "answer": "Chaque collaborateur dispose de 1500 EUR/an et peut mobiliser son CPF via FormationNet. L'IA analyse les besoins, suggère des parcours (humour discutable) et coanime des formations internes chaque jeudi.",
+      "confidence": "high",
+      "tags": [
+        "formation",
+        "budget"
+      ],
+      "examples": [
+        "Certification AWS"
+      ],
+      "follow_up": "Comment suivre son budget formation ?",
+      "search_synonyms": [
+        "développement professionnel"
+      ]
+    },
+    {
+      "id": "rh-007",
+      "section": "RH & Onboarding",
+      "question": "Évaluations de carrière ?",
+      "answer": "Les évaluations de carrière combinent un entretien annuel et des checkpoints trimestriels. La grille comporte quatre niveaux (Padawan, Jedi, Master, Grand Sage) et une promotion est envisageable après 18 mois minimum. L'IA suit les progrès, mais la décision reste humaine.",
+      "confidence": "high",
+      "tags": [
+        "evaluation",
+        "carriere"
+      ],
+      "examples": [
+        "Entretien annuel"
+      ],
+      "follow_up": "Comment contester une évaluation ?",
+      "search_synonyms": [
+        "évolution professionnelle"
+      ]
+    },
+    {
+      "id": "rh-008",
+      "section": "RH & Onboarding",
+      "question": "Politique télétravail détaillée ?",
+      "answer": "Après trois mois, vous pouvez télétravailler jusqu'à trois jours par semaine. Le matériel est fourni, l'abonnement internet est remboursé 50 EUR/mois et la présence est requise pour les réunions d'équipe comme pour les formations. L'IA surveille la productivité avec bienveillance et fait confiance au professionnalisme de chacun. Seule exception : la semaine de release, tout le monde au bureau pour gérer le stress ensemble.",
+      "confidence": "high",
+      "tags": [
+        "remote",
+        "teletravail",
+        "materiel"
+      ],
+      "examples": [
+        "Home office",
+        "Équipement"
+      ],
+      "follow_up": "Que faire en cas de problème technique à distance ?",
+      "search_synonyms": [
+        "travail à distance"
+      ]
+    },
+    {
+      "id": "rh-009",
+      "section": "RH & Onboarding",
+      "question": "Sécurité au travail ?",
+      "answer": "La sécurité passe par une formation obligatoire, des exercices d'évacuation trimestriels, un défibrillateur et une visite annuelle à la médecine du travail. On veille aussi à l'ergonomie et aux pauses régulières (merci l'IA pour les rappels).",
+      "confidence": "high",
+      "tags": [
+        "sante",
+        "securite"
+      ],
+      "examples": [
+        "Accident travail"
+      ],
+      "follow_up": "Comment signaler un risque sécurité ?",
+      "search_synonyms": [
+        "prévention"
+      ]
+    },
+    {
+      "id": "rh-010",
+      "section": "RH & Onboarding",
+      "question": "Dress code ?",
+      "answer": "Le dress code se veut décontracté-chic : ni tongs ni costard sauf rendez-vous client. Évitez simplement les t-shirts à blagues de dev trop obscures avec les partenaires. Le vendredi, l'IA sort virtuellement ses chaussettes dépareillées.",
+      "confidence": "medium",
+      "tags": [
+        "dress-code"
+      ],
+      "examples": [
+        "Tenue bureau"
+      ],
+      "follow_up": "Quelles exceptions au dress code ?",
+      "search_synonyms": [
+        "code vestimentaire"
+      ]
+    },
+    {
+      "id": "rh-011",
+      "section": "RH & Onboarding",
+      "question": "Restauration ?",
+      "answer": "CielCantine propose des options veggie, des micro-ondes, des distributeurs healthy et du café premium. Le jeudi, place aux cupcakes et, le vendredi, à la Pizza-Code.",
+      "confidence": "high",
+      "tags": [
+        "restauration",
+        "repas"
+      ],
+      "examples": [
+        "Manger midi ?"
+      ],
+      "follow_up": "Comment signaler des allergies alimentaires ?",
+      "search_synonyms": [
+        "pause déj"
+      ]
+    },
+    {
+      "id": "rh-012",
+      "section": "RH & Onboarding",
+      "question": "Communication interne ?",
+      "answer": "On communique via Slack, email, CielMeet (notre visio maison) et, pour les nostalgiques, un tableau papier. #random pour les memes, #tech pour le sérieux et #cielnet-ia pour discuter avec l'assistante. Attention : CielNet lit parfois et commente sans filtre.",
+      "confidence": "high",
+      "tags": [
+        "communication",
+        "slack"
+      ],
+      "examples": [
+        "Canaux Slack"
+      ],
+      "follow_up": "Comment créer un nouveau canal ?",
+      "search_synonyms": [
+        "outils collaboration"
+      ]
+    },
+    {
+      "id": "rh-013",
+      "section": "RH & Onboarding",
+      "question": "Événements sociaux ?",
+      "answer": "Côté vie sociale : un afterwork par mois, un team building par trimestre, des tournois de ping-pong et des clubs de lecture. Ajoutez CielNet Day, les hackathons et les confs tech. L'IA participe et gagne souvent les quiz culture (Wikipedia n'est pas très fair-play).",
+      "confidence": "high",
+      "tags": [
+        "evenements",
+        "social"
+      ],
+      "examples": [
+        "Team building"
+      ],
+      "follow_up": "Comment proposer une nouvelle activité ?",
+      "search_synonyms": [
+        "vie sociale"
+      ]
+    },
+    {
+      "id": "rh-014",
+      "section": "RH & Onboarding",
+      "question": "Démission procédure ?",
+      "answer": "Pour démissionner, envoyez une lettre recommandée, respectez le préavis (1 à 3 mois), réalisez l'entretien de départ et restituez le matériel. L'IA mène l'exit interview en promettant de ne pas le prendre personnellement, et la porte reste ouverte pour un retour.",
+      "confidence": "medium",
+      "tags": [
+        "demission",
+        "depart"
+      ],
+      "examples": [
+        "Démissionner"
+      ],
+      "follow_up": "Comment négocier la durée de préavis ?",
+      "search_synonyms": [
+        "démission",
+        "quitter"
+      ]
+    },
+    {
+      "id": "rh-015",
+      "section": "RH & Onboarding",
+      "question": "Stages alternance ?",
+      "answer": "Le programme stagE++ dure au minimum six mois, avec de vraies missions et un buddy dédié. Convention CROUS, gratification et prime de performance sont prévues, et l'embauche post-diplôme est fréquente.",
+      "confidence": "high",
+      "tags": [
+        "stage",
+        "alternance"
+      ],
+      "examples": [
+        "Postuler stage"
+      ],
+      "follow_up": "Comment candidater à un stage ?",
+      "search_synonyms": [
+        "étudiant"
+      ]
+    },
+    {
+      "id": "rh-016",
+      "section": "RH & Onboarding",
+      "question": "Politique handicap ?",
+      "answer": "Nous adaptons les postes : locaux accessibles, matériel spécialisé, accompagnement par un référent handicap formé et partenariat AGEFIPH. L'IA vérifie l'accessibilité de nos interfaces pour que tout le monde puisse travailler sereinement.",
+      "confidence": "high",
+      "tags": [
+        "handicap",
+        "inclusion"
+      ],
+      "examples": [
+        "Aménagement poste"
+      ],
+      "follow_up": "Comment demander un aménagement de poste ?",
+      "search_synonyms": [
+        "accessibilité"
+      ]
+    },
+    {
+      "id": "rh-017",
+      "section": "RH & Onboarding",
+      "question": "Parentalité conciliation ?",
+      "answer": "Pour concilier parentalité et boulot : congé paternité étendu à 25 jours, crèche partenaire, chèques CESU et retour progressif. Réunions sur les core hours, visios tolérant les apparitions d'enfants. L'IA est immunisée contre les pleurs en fond sonore.",
+      "confidence": "high",
+      "tags": [
+        "parentalite",
+        "conge-parental"
+      ],
+      "examples": [
+        "Congé paternité"
+      ],
+      "follow_up": "Comment réserver une place en crèche ?",
+      "search_synonyms": [
+        "parent"
+      ]
+    },
+    {
+      "id": "rh-018",
+      "section": "RH & Onboarding",
+      "question": "Diversité engagement ?",
+      "answer": "La diversité se traduit par un recrutement bias-free piloté par l'IA, 47 % de femmes et 12 nationalités. Charte d'inclusion, formations dédiées et employee resource groups complètent l'ensemble. L'IA corrige même ses propres biais algorithmiques.",
+      "confidence": "high",
+      "tags": [
+        "diversite",
+        "parite"
+      ],
+      "examples": [
+        "Politique diversité"
+      ],
+      "follow_up": "Quelles actions concrètes sont menées ?",
+      "search_synonyms": [
+        "égalité"
+      ]
+    },
+    {
+      "id": "rh-019",
+      "section": "RH & Onboarding",
+      "question": "Mobilité interne ?",
+      "answer": "La mobilité interne commence par une publication des postes en interne avant l'externe. Un entretien est garanti si votre profil correspond, puis un plan d'adaptation de 3 mois avec formation passerelle. L'IA analyse les gaps de compétences ; résultat : 40 % des promotions 2024 sont internes.",
+      "confidence": "high",
+      "tags": [
+        "mobilite",
+        "promotion"
+      ],
+      "examples": [
+        "Changer équipe"
+      ],
+      "follow_up": "Où consulter les postes disponibles ?",
+      "search_synonyms": [
+        "mutation"
+      ]
+    },
+    {
+      "id": "rh-020",
+      "section": "RH & Onboarding",
+      "question": "Culture feedback ?",
+      "answer": "Le feedback est continu : 360° annuel, one-on-ones bimensuels et culture blameless. Les erreurs sont vues comme un levier d'apprentissage. L'IA analyse le sentiment des équipes et remonte les alertes quand le moral baisse.",
+      "confidence": "high",
+      "tags": [
+        "feedback",
+        "culture"
+      ],
+      "examples": [
+        "Donner feedback"
+      ],
+      "follow_up": "Comment formuler un feedback difficile ?",
+      "search_synonyms": [
+        "culture entreprise"
+      ]
+    },
+    {
+      "id": "rh-021",
+      "section": "RH & Onboarding",
+      "question": "Congés maladie, comment déclarer ?",
+      "answer": "Dès les premiers symptômes, préviens ton manager et l'équipe RH sur le canal Slack #hr-alert avant 10 h. Dépose ensuite l'arrêt maladie sur CielHR (un scan suffit) dans les 48 h : la paie se met à jour automatiquement et l'IA vérifie les dates. Pendant ton absence, ton backlog est gelé et ton buddy gère les urgences pour que tu puisses vraiment te reposer.",
+      "confidence": "high",
+      "tags": [
+        "conges",
+        "maladie"
+      ],
+      "examples": [
+        "Arrêt maladie"
+      ],
+      "follow_up": "Peut-on télétravailler pendant la convalescence ?",
+      "search_synonyms": [
+        "arret maladie",
+        "conge maladie"
+      ]
+    },
+    {
+      "id": "rh-022",
+      "section": "RH & Onboarding",
+      "question": "Stationnement et mobilité douce ?",
+      "answer": "Le parking P2 accueille les collaborateurs inscrits sur CielDrive : badge d'accès, place nominative, ouverture 6 h-23 h. Les nouveaux peuvent demander une place temporaire de 30 jours, mais la priorité revient ensuite au covoiturage et aux véhicules électriques. Pour les mobilités douces, on propose un local vélo sécurisé, des bornes de recharge et le forfait mobilité durable remboursé via la note de frais mensuelle.",
+      "confidence": "medium",
+      "tags": [
+        "parking",
+        "mobilite"
+      ],
+      "examples": [
+        "Stationnement bureau"
+      ],
+      "follow_up": "Comment demander une place de parking ou un badge vélo ?",
+      "search_synonyms": [
+        "stationnement",
+        "parking entreprise"
+      ]
+    },
+    {
+      "id": "rh-023",
+      "section": "RH & Onboarding",
+      "question": "Cuisine et espaces repas ?",
+      "answer": "Les cuisines sont accessibles 24/7 avec le badge : frigos connectés, micro-ondes, machines à café en grains et fontaines à eau filtrée. Pense à étiqueter ton repas : l'IA du frigo envoie un rappel avant expiration et déclenche un nettoyage chaque vendredi à 16 h. Des ateliers cuisine internes ont lieu chaque premier jeudi ; inscris-toi sur le portail Culture pour réserver ta place et éviter la file d'attente.",
+      "confidence": "medium",
+      "tags": [
+        "cuisine",
+        "vie-bureau"
+      ],
+      "examples": [
+        "Utiliser cuisine"
+      ],
+      "follow_up": "Peut-on apporter ses propres appareils culinaires ?",
+      "search_synonyms": [
+        "kitchenette",
+        "pause dejeuner"
+      ]
+    },
+    {
+      "id": "auth-001",
+      "section": "IT Accès & Auth",
+      "question": "Accès premier jour ?",
+      "answer": "L'IA prépare votre compte la veille de votre arrivée : identifiant prenom.nom et mot de passe temporaire envoyé par SMS. Le premier jour, l'équipe IT vous accompagne pour activer la MFA et s'assure que les accès évoluent du pack basique (J1) au pack dev (J3) puis admin (J15) si besoin.",
+      "confidence": "high",
+      "tags": [
+        "premier-jour",
+        "creation-compte"
+      ],
+      "examples": [
+        "Créer compte"
+      ],
+      "follow_up": "Que faire si le SMS n'arrive pas ?",
+      "search_synonyms": [
+        "accès initial"
+      ]
+    },
+    {
+      "id": "auth-002",
+      "section": "IT Accès & Auth",
+      "question": "Mot passe oublié ?",
+      "answer": "Le portail self-service CielPass reste accessible même quand le reste est verrouillé. Saisissez votre email, validez par SMS et un nouveau mot de passe est généré immédiatement. Si quelque chose vous paraît louche, ouvrez un ticket : l'IA analysera les tentatives suspectes avec l'équipe IT.",
+      "confidence": "high",
+      "tags": [
+        "password",
+        "reset"
+      ],
+      "examples": [
+        "Récupérer MDP"
+      ],
+      "follow_up": "Comment débloquer mon compte après plusieurs échecs ?",
+      "search_synonyms": [
+        "password reset"
+      ]
+    },
+    {
+      "id": "auth-003",
+      "section": "IT Accès & Auth",
+      "question": "Configurer MFA ?",
+      "answer": "CielAuth impose la MFA pour tout le monde : application mobile, SMS ou token hardware au choix. La configuration se fait lors de la première connexion, des codes de secours sont générés automatiquement et l'IA s'agace gentiment à chaque tentative de contournement.",
+      "confidence": "high",
+      "tags": [
+        "mfa",
+        "2fa"
+      ],
+      "examples": [
+        "Activer 2FA"
+      ],
+      "follow_up": "Procédure si je perds mon téléphone ?",
+      "search_synonyms": [
+        "double auth"
+      ]
+    },
+    {
+      "id": "auth-004",
+      "section": "IT Accès & Auth",
+      "question": "SSH serveurs ?",
+      "answer": "Pour accéder aux serveurs, on combine VPN CielConnect et certificats PKI. Les mots de passe sont bannis au profit des clés publiques. Le bastion protège la prod, les environnements dev/staging sont accessibles directement. L'IA surveille les commandes sensibles en arrière-plan.",
+      "confidence": "high",
+      "tags": [
+        "ssh",
+        "serveurs"
+      ],
+      "examples": [
+        "Connexion serveurs"
+      ],
+      "follow_up": "Comment renouveler ma clé SSH ?",
+      "search_synonyms": [
+        "accès infrastructure"
+      ]
+    },
+    {
+      "id": "auth-005",
+      "section": "IT Accès & Auth",
+      "question": "Rôles permissions ?",
+      "answer": "La gestion des droits repose sur 5 rôles : Visitor, User, Developer, Admin et SuperAdmin. Les permissions sont granulaires par service. L'IA anticipe souvent les besoins et pré-approuve les demandes, tandis qu'un audit moindre privilège passe chaque mois.",
+      "confidence": "high",
+      "tags": [
+        "rbac",
+        "permissions"
+      ],
+      "examples": [
+        "Demander accès BDD"
+      ],
+      "follow_up": "Comment signaler un refus d'accès injustifié ?",
+      "search_synonyms": [
+        "gestion droits"
+      ]
+    },
+    {
+      "id": "auth-006",
+      "section": "IT Accès & Auth",
+      "question": "VPN télétravail ?",
+      "answer": "CielConnect démarre automatiquement sur tous les OS et propose deux profils : CielWork pour les ressources internes et CielSecure pour la navigation. Grâce au split tunneling, Netflix reste hors VPN tandis que Slack y transite. L'IA ajuste la bande passante pour éviter les ralentissements.",
+      "confidence": "high",
+      "tags": [
+        "vpn",
+        "remote"
+      ],
+      "examples": [
+        "Installer VPN"
+      ],
+      "follow_up": "Que vérifier quand le VPN se déconnecte sans cesse ?",
+      "search_synonyms": [
+        "accès distant"
+      ]
+    },
+    {
+      "id": "auth-007",
+      "section": "IT Accès & Auth",
+      "question": "Clés API personnelles ?",
+      "answer": "Les clés API personnelles se génèrent sur le portail CielAPI. Choisissez les scopes, définissez une expiration (maximum un an) et laissez l'IA surveiller l'usage : alertes anomalies incluses. Pensez à stocker les tokens dans les variables d'environnement, jamais dans le code.",
+      "confidence": "high",
+      "tags": [
+        "api",
+        "tokens"
+      ],
+      "examples": [
+        "Générer token"
+      ],
+      "follow_up": "Comment sécuriser mes clés en local ?",
+      "search_synonyms": [
+        "auth API"
+      ]
+    },
+    {
+      "id": "auth-008",
+      "section": "IT Accès & Auth",
+      "question": "SSO applications ?",
+      "answer": "Notre SSO CielAuth couvre 95 % des applications via SAML ou OAuth2. Une seule authentification et l'ensemble de l'écosystème se déverrouille. L'IA apprend vos habitudes et précharge les outils que vous utilisez le plus.",
+      "confidence": "high",
+      "tags": [
+        "sso",
+        "saml"
+      ],
+      "examples": [
+        "Problème SSO"
+      ],
+      "follow_up": "Comment diagnostiquer un échec SSO ?",
+      "search_synonyms": [
+        "connexion unique"
+      ]
+    },
+    {
+      "id": "auth-009",
+      "section": "IT Accès & Auth",
+      "question": "WiFi entreprise ?",
+      "answer": "Le Wi-Fi corporate s'appelle CielNet-Corp et utilise EAP-TLS avec certificats. L'onboarding pousse la configuration automatiquement. Pour les visiteurs, CielNet-Guest demande juste un sponsor. L'IA gère les optimisations radio et bascule sur la 4G maison si le réseau fatigue.",
+      "confidence": "high",
+      "tags": [
+        "wifi",
+        "certificats"
+      ],
+      "examples": [
+        "Config WiFi"
+      ],
+      "follow_up": "Quelle est la marche à suivre pour un accès invité ?",
+      "search_synonyms": [
+        "réseau entreprise"
+      ]
+    },
+    {
+      "id": "auth-010",
+      "section": "IT Accès & Auth",
+      "question": "Historique connexions ?",
+      "answer": "Le portail CielAudit conserve 90 jours d'historique : connexions réussies ou non, géolocalisation, appareils utilisés. Des alertes partent dès qu'un comportement sort des clous et vous pouvez exporter un CSV pour vos propres audits.",
+      "confidence": "high",
+      "tags": [
+        "audit",
+        "logs"
+      ],
+      "examples": [
+        "Dernières connexions"
+      ],
+      "follow_up": "Comment signaler une connexion suspecte ?",
+      "search_synonyms": [
+        "journal connexions"
+      ]
+    },
+    {
+      "id": "auth-011",
+      "section": "IT Accès & Auth",
+      "question": "BYOD autorisé ?",
+      "answer": "Le BYOD est autorisé via la suite CielSecure : antivirus, chiffrement et MDM obligatoire. Les espaces pro et perso restent isolés. L'IA évalue le niveau de sécurité de l'appareil. Compatibilité assurée côté iOS, Android, Windows et macOS ; Linux est traité au cas par cas.",
+      "confidence": "medium",
+      "tags": [
+        "byod",
+        "mdm"
+      ],
+      "examples": [
+        "iPhone travail"
+      ],
+      "follow_up": "Peut-on demander la suppression du MDM ?",
+      "search_synonyms": [
+        "appareil personnel"
+      ]
+    },
+    {
+      "id": "auth-012",
+      "section": "IT Accès & Auth",
+      "question": "Certificats numériques ?",
+      "answer": "CielCert génère automatiquement vos certificats numériques personnels, valables un an et stockés dans le TPM ou le trousseau. Le renouvellement se lance 30 jours avant l'échéance et l'IA multiplie les rappels avant de devenir insistante.",
+      "confidence": "medium",
+      "tags": [
+        "certificats",
+        "pki"
+      ],
+      "examples": [
+        "Renouveler certificat"
+      ],
+      "follow_up": "Comment révoquer un certificat compromis ?",
+      "search_synonyms": [
+        "PKI entreprise"
+      ]
+    },
+    {
+      "id": "auth-013",
+      "section": "IT Accès & Auth",
+      "question": "YubiKey tokens hardware ?",
+      "answer": "Les YubiKey sont obligatoires pour les rôles sensibles. On les configure avec l'équipe IT, en prévoyant un token de secours. Compatibles FIDO2/WebAuthn, elles permettent une authentification sans mot de passe. L'IA milite activement pour abandonner le SMS.",
+      "confidence": "medium",
+      "tags": [
+        "yubikey",
+        "fido2"
+      ],
+      "examples": [
+        "Config YubiKey"
+      ],
+      "follow_up": "Que faire si ma YubiKey disparaît ?",
+      "search_synonyms": [
+        "clé sécurité physique"
+      ]
+    },
+    {
+      "id": "auth-014",
+      "section": "IT Accès & Auth",
+      "question": "Accès temporaires prestataires ?",
+      "answer": "Les accès prestataires passent par CielGuest : durée configurable d'une journée à six mois, permissions limitées et sponsor obligatoire. Au-delà d'une semaine, validation conjointe manager + IT. L'IA évalue le risque du profil et ajuste les restrictions automatiquement.",
+      "confidence": "high",
+      "tags": [
+        "invites",
+        "temporaire"
+      ],
+      "examples": [
+        "Compte stagiaire"
+      ],
+      "follow_up": "Comment prolonger un accès temporaire ?",
+      "search_synonyms": [
+        "comptes temporaires"
+      ]
+    },
+    {
+      "id": "auth-015",
+      "section": "IT Accès & Auth",
+      "question": "Comptes de service ?",
+      "answer": "Les comptes de service CielServiceAccounts sont réservés aux applicatifs. Rotation automatique des secrets tous les 90 jours, usage monitoré et principe du moindre privilège. Aucun login interactif, uniquement de l'API : l'IA veille à repérer les comportements anormaux.",
+      "confidence": "medium",
+      "tags": [
+        "service-accounts"
+      ],
+      "examples": [
+        "Créer compte app"
+      ],
+      "follow_up": "Que faire si un compte de service est suspendu ?",
+      "search_synonyms": [
+        "comptes applicatifs"
+      ]
+    },
+    {
+      "id": "auth-016",
+      "section": "IT Accès & Auth",
+      "question": "Sessions utilisateur ?",
+      "answer": "Les sessions utilisateur expirent au bout de 8 h ou après 2 h d'inactivité. Une seule session active est autorisée par défaut, mais un mode multi-session peut être accordé sur justification. L'IA traque les connexions simultanées suspectes.",
+      "confidence": "medium",
+      "tags": [
+        "sessions",
+        "timeouts"
+      ],
+      "examples": [
+        "Session expirée"
+      ],
+      "follow_up": "Comment demander une session supplémentaire ?",
+      "search_synonyms": [
+        "gestion sessions"
+      ]
+    },
+    {
+      "id": "auth-017",
+      "section": "IT Accès & Auth",
+      "question": "Accès urgence weekend ?",
+      "answer": "Le mode break-glass se déclenche en cas d'urgence : validation manager + IT, logs complets et durée maximale de 4 h. Le CISO est alerté si l'accès est utilisé. Les tokens d'urgence sont stockés dans un coffre et un post-incident review est obligatoire.",
+      "confidence": "high",
+      "tags": [
+        "urgence",
+        "break-glass"
+      ],
+      "examples": [
+        "Accès urgence"
+      ],
+      "follow_up": "Quelles preuves fournir après un accès break-glass ?",
+      "search_synonyms": [
+        "accès d'urgence"
+      ]
+    },
+    {
+      "id": "auth-018",
+      "section": "IT Accès & Auth",
+      "question": "Politique mots de passe ?",
+      "answer": "La politique mots de passe impose 12 caractères minimum, vérifie automatiquement la complexité et bloque les mots du dictionnaire. Expiration tous les 180 jours, historique des 12 derniers. CielVault reste le gestionnaire recommandé. L'IA analyse la robustesse et suggère des améliorations.",
+      "confidence": "high",
+      "tags": [
+        "password",
+        "politique"
+      ],
+      "examples": [
+        "Règles MDP"
+      ],
+      "follow_up": "Les passkeys sont-elles disponibles ?",
+      "search_synonyms": [
+        "règles mot de passe"
+      ]
+    },
+    {
+      "id": "auth-019",
+      "section": "IT Accès & Auth",
+      "question": "Réseaux Wi-Fi internes ?",
+      "answer": "Deux SSID principaux : CielNet-Staff (802.1x) pour les appareils gérés et CielNet-Guest pour les visiteurs. Les identifiants staff sont poussés via le MDM ; sinon, portail d'inscription rapide avec badge et MFA. L'IA radio réalloue les canaux dès qu'elle détecte saturation ou interférences.",
+      "confidence": "high",
+      "tags": [
+        "wifi",
+        "reseau"
+      ],
+      "examples": [
+        "Connexion Wi-Fi bureau"
+      ],
+      "follow_up": "Comment prolonger un accès invité ?",
+      "search_synonyms": [
+        "reseau sans fil",
+        "ssid"
+      ]
+    },
+    {
+      "id": "auth-020",
+      "section": "IT Accès & Auth",
+      "question": "Badges d'accès bureaux ?",
+      "answer": "Votre badge NFC est créé pendant l'onboarding avec la photo prise en cabine et s'active dès la signature du livret sécurité. Les zones (open-space, lab, data room...) sont gérées par CielAccess via ServiceDesk avec validation manager + sécurité. En cas de perte, signalez-le sous 30 minutes : l'IA déclenche la révocation et la conciergerie livre un badge de remplacement dans la journée.",
+      "confidence": "medium",
+      "tags": [
+        "badge",
+        "acces"
+      ],
+      "examples": [
+        "Badge bureau"
+      ],
+      "follow_up": "Que faire si le badge devient illisible ?",
+      "search_synonyms": [
+        "controle acces",
+        "badge nfc"
+      ]
+    },
+    {
+      "id": "dev-001",
+      "section": "IT Environnement de dev",
+      "question": "Setup environnement dev ?",
+      "answer": "Le script CielDev fait le gros œuvre : il clone nos repos, installe Docker, Node, Python, Go, configure VS Code avec les bonnes extensions et déploie un backup sur CielCloud. L'IA adapte la configuration selon l'équipe ; comptez 30 minutes et un café.",
+      "confidence": "high",
+      "tags": [
+        "setup",
+        "environnement"
+      ],
+      "examples": [
+        "Installer env dev"
+      ],
+      "follow_up": "Comment personnaliser l'environnement après l'installation ?",
+      "search_synonyms": [
+        "config IDE"
+      ]
+    },
+    {
+      "id": "dev-002",
+      "section": "IT Environnement de dev",
+      "question": "Workflow Git ?",
+      "answer": "Notre workflow Git s'inspire de GitFlow : `main`, `develop`, `feature`, `hotfix`. Chaque PR passe par deux reviewers et des pre-commit hooks. L'IA lit les commits, pointe les incohérences et balance parfois une blague.",
+      "confidence": "high",
+      "tags": [
+        "git",
+        "workflow"
+      ],
+      "examples": [
+        "Feature branch",
+        "Pull request"
+      ],
+      "follow_up": "Quel est le plan d'action conseillé en cas de conflit de merge ?",
+      "search_synonyms": [
+        "gestion versions"
+      ]
+    },
+    {
+      "id": "dev-003",
+      "section": "IT Environnement de dev",
+      "question": "Docker local ?",
+      "answer": "Tous les services disposent de Dockerfile et de compose. On pousse les images dans CielRegistry, on profite du hot reload et de volumes bien pensés. L'IA optimise les builds et le cache. Pour les fans d'UI : Portainer est disponible, et VS Code supporte les DevContainers.",
+      "confidence": "high",
+      "tags": [
+        "docker",
+        "containers"
+      ],
+      "examples": [
+        "App Docker",
+        "Debug container"
+      ],
+      "follow_up": "Comment réduire encore les temps de build ?",
+      "search_synonyms": [
+        "conteneurisation"
+      ]
+    },
+    {
+      "id": "dev-004",
+      "section": "IT Environnement de dev",
+      "question": "Bases données dev ?",
+      "answer": "Les bases de données dev (PostgreSQL, MySQL, MongoDB, Redis...) sont accessibles via VPN et tunnel SSH, avec des credentials gérés dans CielSecret. Des dumps anonymisés de la prod sont rafraîchis chaque semaine et l'IA surveille les requêtes trop lourdes.",
+      "confidence": "high",
+      "tags": [
+        "database",
+        "bdd"
+      ],
+      "examples": [
+        "Connexion BDD dev"
+      ],
+      "follow_up": "Quelle est la procédure pour demander une nouvelle base ?",
+      "search_synonyms": [
+        "environnement data"
+      ]
+    },
+    {
+      "id": "dev-005",
+      "section": "IT Environnement de dev",
+      "question": "CI/CD tests ?",
+      "answer": "Les pipelines GitLab enchaînent lint, tests, build puis déploiement. Les tests unitaires et d'intégration sont obligatoires avec un coverage minimum de 80 %. Chaque PR déclenche un environnement éphémère. L'IA décortique les échecs et propose des pistes de correction.",
+      "confidence": "high",
+      "tags": [
+        "ci-cd",
+        "tests"
+      ],
+      "examples": [
+        "Tests unitaires",
+        "Pipeline debug"
+      ],
+      "follow_up": "Comment améliorer un coverage en dessous du seuil ?",
+      "search_synonyms": [
+        "intégration continue"
+      ]
+    },
+    {
+      "id": "dev-006",
+      "section": "IT Environnement de dev",
+      "question": "Monitoring debug ?",
+      "answer": "Pour le monitoring, on combine Prometheus + Grafana, ELK pour les logs et Jaeger pour le tracing. Côté profiling : pyflame, pprof et consorts. L'IA corrèle les signaux entre services pour nous pointer le vrai coupable.",
+      "confidence": "high",
+      "tags": [
+        "monitoring",
+        "debug"
+      ],
+      "examples": [
+        "Logs erreur",
+        "Dashboard"
+      ],
+      "follow_up": "Comment créer une alerte personnalisée ?",
+      "search_synonyms": [
+        "supervision app"
+      ]
+    },
+    {
+      "id": "dev-007",
+      "section": "IT Environnement de dev",
+      "question": "Documentation APIs ?",
+      "answer": "Chaque API doit exposer une spec OpenAPI/Swagger. Les annotations génèrent la doc automatiquement, les collections Postman suivent et l'IA injecte des exemples réalistes tout en vérifiant la cohérence avec l'implémentation.",
+      "confidence": "high",
+      "tags": [
+        "api",
+        "documentation"
+      ],
+      "examples": [
+        "Doc API",
+        "Test endpoint"
+      ],
+      "follow_up": "Comment versionner proprement une API ?",
+      "search_synonyms": [
+        "spécification REST"
+      ]
+    },
+    {
+      "id": "dev-008",
+      "section": "IT Environnement de dev",
+      "question": "Secrets configurations ?",
+      "answer": "Tous les secrets vivent dans CielSecret. Les configs passent par des variables d'environnement, jamais en dur. L'IA scanne les repos pour détecter les secrets oubliés et rappelle les bonnes pratiques. Le CLI `cielctl` simplifie la récupération des valeurs.",
+      "confidence": "high",
+      "tags": [
+        "secrets",
+        "vault"
+      ],
+      "examples": [
+        "Secret BDD",
+        "Variables env"
+      ],
+      "follow_up": "Comment faire tourner une rotation de secrets sans downtime ?",
+      "search_synonyms": [
+        "gestion secrets"
+      ]
+    },
+    {
+      "id": "dev-009",
+      "section": "IT Environnement de dev",
+      "question": "Standards qualité code ?",
+      "answer": "Qualité oblige : ESLint, Pylint, golangci-lint, formatage via Prettier ou Black, pre-commit hooks bloquants et quality gates SonarQube. L'IA repère les patterns récurrents et suggère des refactorings avant que le reviewer ne soupire.",
+      "confidence": "high",
+      "tags": [
+        "qualite",
+        "linting"
+      ],
+      "examples": [
+        "Violation SonarQube"
+      ],
+      "follow_up": "Comment proposer une nouvelle règle de linting ?",
+      "search_synonyms": [
+        "standards dev"
+      ]
+    },
+    {
+      "id": "dev-010",
+      "section": "IT Environnement de dev",
+      "question": "Optimisation performances ?",
+      "answer": "Pour gagner en performance : profiling (py-spy, pprof, Chrome DevTools), tests de charge k6, benchmarks intégrés aux CI. L'IA analyse les tendances, recommande caches Redis, optimisations SQL ou CDN selon le goulot.",
+      "confidence": "medium",
+      "tags": [
+        "performance",
+        "optimisation"
+      ],
+      "examples": [
+        "Lenteur API",
+        "Optim BDD"
+      ],
+      "follow_up": "Comment mesurer l'impact d'une optimisation ?",
+      "search_synonyms": [
+        "tuning application"
+      ]
+    },
+    {
+      "id": "dev-011",
+      "section": "IT Environnement de dev",
+      "question": "Gestion dépendances ?",
+      "answer": "Les dépendances passent par le catalogue CielLibs. Un bot gère les mises à jour critiques et les patchs de sécurité. L'IA évalue les CVE, propose des migrations sécurisées et impose les lock files pour garantir la reproductibilité.",
+      "confidence": "high",
+      "tags": [
+        "dependances",
+        "securite"
+      ],
+      "examples": [
+        "Nouvelle dépendance"
+      ],
+      "follow_up": "Que faire en cas de conflit de versions entre projets ?",
+      "search_synonyms": [
+        "gestion packages"
+      ]
+    },
+    {
+      "id": "dev-012",
+      "section": "IT Environnement de dev",
+      "question": "Mock services externes ?",
+      "answer": "Pour mocker les services externes : WireMock pour les API, Testcontainers pour les bases, LocalStack pour AWS. Des stubs préconfigurés existent. L'IA génère des mocks réalistes à partir des specs OpenAPI, et un simple `docker-compose` démarre l'ensemble.",
+      "confidence": "high",
+      "tags": [
+        "mock",
+        "simulation"
+      ],
+      "examples": [
+        "Mocker API",
+        "Simuler AWS"
+      ],
+      "follow_up": "Comment ajouter un mock personnalisé ?",
+      "search_synonyms": [
+        "bouchonnage"
+      ]
+    },
+    {
+      "id": "dev-013",
+      "section": "IT Environnement de dev",
+      "question": "Développement mobile ?",
+      "answer": "Pour le mobile : émulateurs iOS et Android préconfigurés, pool de devices physiques partagés, React Native + Expo ou Swift/Kotlin natif. Tests via Detox et Espresso. L'IA surveille les temps de build et prédit les régressions.",
+      "confidence": "medium",
+      "tags": [
+        "mobile",
+        "apps"
+      ],
+      "examples": [
+        "App émulateur"
+      ],
+      "follow_up": "Comment réserver un device physique pour le debug ?",
+      "search_synonyms": [
+        "dev mobile"
+      ]
+    },
+    {
+      "id": "dev-014",
+      "section": "IT Environnement de dev",
+      "question": "Extensions IDE ?",
+      "answer": "Le pack VS Code CielCode inclut GitLens, Prettier, Thunder Client, Docker, outil K8s et un thème maison Dark. L'IA observe vos habitudes et propose les extensions les plus utiles dès qu'elle capte un nouveau workflow.",
+      "confidence": "high",
+      "tags": [
+        "ide",
+        "extensions"
+      ],
+      "examples": [
+        "Extensions recommandées"
+      ],
+      "follow_up": "Peut-on ajouter une extension spécifique à l'image de base ?",
+      "search_synonyms": [
+        "outils dev"
+      ]
+    },
+    {
+      "id": "dev-015",
+      "section": "IT Environnement de dev",
+      "question": "Troubleshoot env local ?",
+      "answer": "Quand l'environnement local flanche : le guide CielDevDebug déroule les checks (ports, permissions, chemins). Le script CielDoctor réalise un diagnostic automatique, l'IA suggère les correctifs et le canal Slack #dev-help répond vite. En dernier recours, un reset propre prend 15 minutes.",
+      "confidence": "high",
+      "tags": [
+        "troubleshooting",
+        "debug"
+      ],
+      "examples": [
+        "Erreur setup",
+        "Env cassé"
+      ],
+      "follow_up": "Comment escalader si le script CielDoctor ne résout pas l'incident ?",
+      "search_synonyms": [
+        "problème setup"
+      ]
+    },
+    {
+      "id": "dev-016",
+      "section": "IT Environnement de dev",
+      "question": "Feature flags ?",
+      "answer": "CielFlags pilote nos feature flags : activation à chaud, rollouts progressifs, A/B testing par environnement, utilisateur ou pourcentage. L'IA surveille les métriques d'impact et recommande les prochaines étapes pour un déploiement sans stress.",
+      "confidence": "medium",
+      "tags": [
+        "feature-flags",
+        "deployment"
+      ],
+      "examples": [
+        "Activer flag",
+        "Rollout"
+      ],
+      "follow_up": "Quelle est la procédure pour nettoyer un flag obsolète ?",
+      "search_synonyms": [
+        "feature toggles"
+      ]
+    },
+    {
+      "id": "support-001",
+      "section": "Support Produit",
+      "question": "Créer ticket support ?",
+      "answer": "Le portail CielSupport vous déroule des formulaires guidés : précisez l'environnement, les étapes de reproduction et glissez captures ou vidéos. Notre IA classe la demande, fixe la priorité et alerte l'équipe en charge. Les SLA restent P1 (1 h), P2 (4 h), P3 (24 h), P4 (72 h).",
+      "confidence": "high",
+      "tags": [
+        "ticket",
+        "support"
+      ],
+      "examples": [
+        "Signaler bug"
+      ],
+      "follow_up": "Comment suivre l'avancement de mon ticket ?",
+      "search_synonyms": [
+        "créer demande"
+      ]
+    },
+    {
+      "id": "support-002",
+      "section": "Support Produit",
+      "question": "Délais réponse support ?",
+      "answer": "Les délais de réponse sont dynamiques : P1 Critical répondu en 15 min 24/7, P2 High en 2 h, P3 Medium en 8 h, P4 Low en 48 h. L'IA traite environ 30 % des cas simples et réoriente les situations plus épineuses vers un humain.",
+      "confidence": "high",
+      "tags": [
+        "sla",
+        "delais"
+      ],
+      "examples": [
+        "Temps réponse urgent"
+      ],
+      "follow_up": "Comment demander une escalade si le délai est dépassé ?",
+      "search_synonyms": [
+        "engagement service"
+      ]
+    },
+    {
+      "id": "support-003",
+      "section": "Support Produit",
+      "question": "Bug vs feature request ?",
+      "answer": "On parle de bug quand le comportement diverge de la spec ou qu'il provoque un crash. Une feature request introduit une nouvelle capacité. L'IA lit vos descriptions, propose une catégorie et évite que les deux se mélangent. Les bugs passent en priorité, les features rejoignent le backlog produit.",
+      "confidence": "high",
+      "tags": [
+        "bug",
+        "feature"
+      ],
+      "examples": [
+        "Signaler dysfonctionnement"
+      ],
+      "follow_up": "Comment prioriser une demande de fonctionnalité ?",
+      "search_synonyms": [
+        "différence bug feature"
+      ]
+    },
+    {
+      "id": "support-004",
+      "section": "Support Produit",
+      "question": "Infos debug problème ?",
+      "answer": "Pour accélérer le diagnostic, fournissez les logs en mode DEBUG, les traces réseau, les captures ou une courte vidéo, ainsi que votre environnement (navigateur, OS, version). L'outil CielDump collecte automatiquement les données techniques et notre IA relie les points.",
+      "confidence": "high",
+      "tags": [
+        "debug",
+        "logs"
+      ],
+      "examples": [
+        "Collecter logs"
+      ],
+      "follow_up": "Comment anonymiser les pièces jointes sensibles ?",
+      "search_synonyms": [
+        "diagnostic problème"
+      ]
+    },
+    {
+      "id": "support-005",
+      "section": "Support Produit",
+      "question": "Recherche base connaissances ?",
+      "answer": "CielKnowledge fonctionne comme un moteur sémantique : posez votre question en langage naturel, filtrez par produit, niveau ou date et l'IA rapproche FAQ, documentations et tickets similaires. Elle comprend les synonymes et le contexte métier.",
+      "confidence": "high",
+      "tags": [
+        "faq",
+        "recherche"
+      ],
+      "examples": [
+        "Chercher solution"
+      ],
+      "follow_up": "Comment proposer une mise à jour de la base de connaissances ?",
+      "search_synonyms": [
+        "base connaissances"
+      ]
+    },
+    {
+      "id": "support-006",
+      "section": "Support Produit",
+      "question": "Urgences hors heures ?",
+      "answer": "L'astreinte couvre les incidents P1 en continu. Le contact se fait via WhatsApp ou SMS si l'appel reste sans réponse. Notre IA filtre les fausses alertes, résout certains incidents en autonomie et escalate un manager en moins de 30 minutes lorsqu'il faut du renfort.",
+      "confidence": "high",
+      "tags": [
+        "urgence",
+        "astreinte"
+      ],
+      "examples": [
+        "Incident critique weekend"
+      ],
+      "follow_up": "Quels types d'incidents déclenchent l'astreinte ?",
+      "search_synonyms": [
+        "urgence hors heures"
+      ]
+    },
+    {
+      "id": "support-007",
+      "section": "Support Produit",
+      "question": "Feedback qualité support ?",
+      "answer": "À chaque résolutions, un combo CSAT + NPS vous est proposé. L'IA analyse les notes de 1 à 5, classe les verbatims et identifie les axes d'amélioration. Les commentaires anonymes du portail sont consolidés et, pour motiver les équipes, les meilleurs scores rapportent... des chocolats.",
+      "confidence": "high",
+      "tags": [
+        "feedback",
+        "satisfaction"
+      ],
+      "examples": [
+        "Noter support"
+      ],
+      "follow_up": "Comment signaler un problème de qualité de service ?",
+      "search_synonyms": [
+        "évaluation support"
+      ]
+    },
+    {
+      "id": "support-008",
+      "section": "Support Produit",
+      "question": "Self-service options ?",
+      "answer": "CielHelp offre les demandes en libre-service : reset mot de passe, génération de certificats, accès aux logs, redémarrage de services non critiques. Un chatbot IA répond aux questions récurrentes, complété par des tutoriels vidéo et des simulateurs de configuration.",
+      "confidence": "high",
+      "tags": [
+        "self-service",
+        "autonomie"
+      ],
+      "examples": [
+        "Résoudre seul"
+      ],
+      "follow_up": "Comment suggérer une nouvelle action en self-service ?",
+      "search_synonyms": [
+        "libre service"
+      ]
+    },
+    {
+      "id": "support-009",
+      "section": "Support Produit",
+      "question": "Formations utilisateurs ?",
+      "answer": "CielAcademy propose un parcours initial par rôle, des sessions avancées chaque mois et une bibliothèque e-learning en accès 24/7. L'IA adapte le contenu selon votre niveau et vos erreurs fréquentes, puis suit les certifications internes.",
+      "confidence": "high",
+      "tags": [
+        "formation",
+        "training"
+      ],
+      "examples": [
+        "Formation produit"
+      ],
+      "follow_up": "Comment devenir formateur CielAcademy ?",
+      "search_synonyms": [
+        "apprentissage utilisateur"
+      ]
+    },
+    {
+      "id": "support-010",
+      "section": "Support Produit",
+      "question": "Compatibilité versions ?",
+      "answer": "La matrice CielCompat recense en temps réel les versions supportées : nous maintenons N-2 sur les produits majeurs et accompagnons les migrations. L'IA analyse votre configuration, repère les incompatibilités et vous alerte avant une mise à jour risquée.",
+      "confidence": "high",
+      "tags": [
+        "compatibilite",
+        "versions"
+      ],
+      "examples": [
+        "Vérifier compatibilité"
+      ],
+      "follow_up": "Comment planifier une migration assistée ?",
+      "search_synonyms": [
+        "migration système"
+      ]
+    },
+    {
+      "id": "support-011",
+      "section": "Support Produit",
+      "question": "Limites taux APIs ?",
+      "answer": "Les limites d'API s'affichent dans les headers `X-RateLimit-*`. Les quotas par utilisateur ou application se règlent sur le portail développeur. L'IA anticipe les pics de charge et peut pré-approuver une hausse temporaire quand le business le justifie.",
+      "confidence": "medium",
+      "tags": [
+        "api",
+        "rate-limiting"
+      ],
+      "examples": [
+        "Dépasser limite"
+      ],
+      "follow_up": "Quelle est la procédure pour obtenir une hausse de quota ?",
+      "search_synonyms": [
+        "limitations API"
+      ]
+    },
+    {
+      "id": "support-012",
+      "section": "Support Produit",
+      "question": "Export données utilisateur ?",
+      "answer": "CielExport propose JSON, CSV ou XML, au choix complet ou partiel. Les données sensibles sont chiffrées par défaut. L'IA optimise les gros volumes en streaming et suggère des filtres pertinents pour éviter les exports lourds inutiles.",
+      "confidence": "high",
+      "tags": [
+        "export",
+        "donnees"
+      ],
+      "examples": [
+        "Télécharger données"
+      ],
+      "follow_up": "Comment programmer un export récurrent ?",
+      "search_synonyms": [
+        "extraction données"
+      ]
+    },
+    {
+      "id": "support-013",
+      "section": "Support Produit",
+      "question": "Intégration partenaires tiers ?",
+      "answer": "La marketplace CielConnect référence les connecteurs partenaires validés (Salesforce, SAP, Google...). APIs standardisées, documentation interactive et sandbox fournie. L'IA évalue la compatibilité et génère un mapping de base pour démarrer rapidement.",
+      "confidence": "medium",
+      "tags": [
+        "integration",
+        "partenaires"
+      ],
+      "examples": [
+        "Connecter Salesforce"
+      ],
+      "follow_up": "Comment suivre l'avancement d'une intégration partenaire ?",
+      "search_synonyms": [
+        "connexion services externes"
+      ]
+    },
+    {
+      "id": "support-014",
+      "section": "Support Produit",
+      "question": "Surveiller performances usage ?",
+      "answer": "CielMetrics offre un suivi personnalisé des performances : temps de réponse, throughput, erreurs par endpoint, sans oublier les alertes à seuils multiples. L'IA repère les comportements anormaux et prédit les prochains goulots avant qu'ils ne se manifestent.",
+      "confidence": "high",
+      "tags": [
+        "performance",
+        "monitoring"
+      ],
+      "examples": [
+        "Surveiller perf API"
+      ],
+      "follow_up": "Comment configurer une alerte sur un indicateur métier ?",
+      "search_synonyms": [
+        "supervision performance"
+      ]
+    },
+    {
+      "id": "support-015",
+      "section": "Support Produit",
+      "question": "API documentation interactive ?",
+      "answer": "Le portail CielDocs réunit la documentation interactive : Swagger UI avec try-it-now, exemples auto-générés et SDK dans plusieurs langages. L'IA veille à la cohérence entre le code et la doc, et vous avertit des breaking changes.",
+      "confidence": "high",
+      "tags": [
+        "api",
+        "documentation"
+      ],
+      "examples": [
+        "Tester API live"
+      ],
+      "follow_up": "Comment demander la publication d'un SDK manquant ?",
+      "search_synonyms": [
+        "doc interactive"
+      ]
+    },
+    {
+      "id": "support-016",
+      "section": "Support Produit",
+      "question": "Gestion incidents récurrents ?",
+      "answer": "Pour les incidents récurrents, l'IA analyse les patterns, suggère une automatisation et enrichit les runbooks intelligents. L'escalade devient prédictive : nous intervenons avant la prochaine panne et mettons en place des actions préventives long terme.",
+      "confidence": "medium",
+      "tags": [
+        "incidents",
+        "automation"
+      ],
+      "examples": [
+        "Incident récurrent"
+      ],
+      "follow_up": "Comment activer l'automatisation sur un runbook existant ?",
+      "search_synonyms": [
+        "automatisation incidents"
+      ]
+    },
+    {
+      "id": "support-017",
+      "section": "Support Produit",
+      "question": "Support développeurs externes ?",
+      "answer": "Le programme CielPartner accompagne les développeurs externes : documentation dédiée, sandbox étendue, support prioritaire, forum communautaire et webinaires réguliers. L'IA coach l'intégration pour que vos applications passent la certification sans stress.",
+      "confidence": "medium",
+      "tags": [
+        "developpeurs",
+        "partenaires"
+      ],
+      "examples": [
+        "Support API externe"
+      ],
+      "follow_up": "Comment obtenir la certification partenaire ?",
+      "search_synonyms": [
+        "développeurs tiers"
+      ]
+    },
+    {
+      "id": "support-018",
+      "section": "Support Produit",
+      "question": "Maintenance programmée communication ?",
+      "answer": "CielMaintenance publie le calendrier des interventions, avec notifications multi-canal personnalisables. Chaque opération précise l'impact attendu, propose des alternatives temporaires et l'IA optimise la planification pour limiter les perturbations.",
+      "confidence": "high",
+      "tags": [
+        "maintenance",
+        "communication"
+      ],
+      "examples": [
+        "Prochaine maintenance"
+      ],
+      "follow_up": "Comment ajuster mes notifications de maintenance ?",
+      "search_synonyms": [
+        "maintenance planifiée"
+      ]
+    },
+    {
+      "id": "support-019",
+      "section": "Support Produit",
+      "question": "Métriques satisfaction globale ?",
+      "answer": "Le dashboard CielSat agrège en temps réel CSAT, NPS, time-to-resolution et first-call-resolution. L'IA analyse le sentiment des verbatims et met en regard les scores avec les équipes, les produits ou les créneaux horaires pour cibler les actions.",
+      "confidence": "medium",
+      "tags": [
+        "metriques",
+        "satisfaction"
+      ],
+      "examples": [
+        "Stats support"
+      ],
+      "follow_up": "Peut-on comparer nos scores avec le benchmark du secteur ?",
+      "search_synonyms": [
+        "indicateurs satisfaction"
+      ]
+    },
+    {
+      "id": "support-020",
+      "section": "Support Produit",
+      "question": "Support multilingue ?",
+      "answer": "Le support est assuré nativement en français et en anglais. Une traduction automatique prend le relais pour les autres langues, avec relecture humaine si le cas est critique. L'IA détecte la langue préférée de l'utilisateur et adapte le ton. Des agents bilingues restent disponibles en back-up.",
+      "confidence": "medium",
+      "tags": [
+        "multilingue",
+        "international"
+      ],
+      "examples": [
+        "Support anglais"
+      ],
+      "follow_up": "Quelles langues supplémentaires pouvons-nous activer sur demande ?",
+      "search_synonyms": [
+        "support international"
+      ]
+    },
+    {
+      "id": "support-021",
+      "section": "Support Produit",
+      "question": "Escalade management ?",
+      "answer": "Les escalades sont pilotées automatiquement : un P1 non résolu sous 1 h, un P2 sous 4 h, etc. La hiérarchie est notifiée, une war room se crée pour les cas critiques et l'IA évalue la complexité pour proposer une escalade proactive quand le ticket tourne en rond.",
+      "confidence": "high",
+      "tags": [
+        "escalade",
+        "management"
+      ],
+      "examples": [
+        "Escalader ticket"
+      ],
+      "follow_up": "Quels critères déclenchent une war room ?",
+      "search_synonyms": [
+        "escalade automatique"
+      ]
+    },
+    {
+      "id": "support-022",
+      "section": "Support Produit",
+      "question": "Retours produit intégration ?",
+      "answer": "Les retours clients suivent un circuit direct avec l'équipe produit. L'IA agrège les demandes similaires, mesure l'impact business et met à jour la roadmap publique avec les statuts. Vous pouvez suivre l'avancée de vos suggestions en temps réel.",
+      "confidence": "high",
+      "tags": [
+        "feedback",
+        "produit"
+      ],
+      "examples": [
+        "Influencer roadmap"
+      ],
+      "follow_up": "Comment suivre la progression de ma demande produit ?",
+      "search_synonyms": [
+        "retours utilisateurs"
+      ]
+    },
+    {
+      "id": "ops-001",
+      "section": "Opérations & DevOps",
+      "question": "Déploiement production sécurisé ?",
+      "answer": "Le pipeline CielDeploy enchaîne build, staging, pré-prod puis prod avec une validation manuelle. Le déploiement se fait en blue/green par défaut et un rollback automatique est déclenché si les healthchecks virent au rouge. L'IA surveille les métriques en direct et ping l'équipe au moindre signal faible.",
+      "confidence": "high",
+      "tags": [
+        "deploiement",
+        "production"
+      ],
+      "examples": [
+        "Déployer version",
+        "Rollback"
+      ],
+      "follow_up": "Comment planifier un déploiement hors horaires ouvrés ?",
+      "search_synonyms": [
+        "mise en production"
+      ]
+    },
+    {
+      "id": "ops-002",
+      "section": "Opérations & DevOps",
+      "question": "Monitoring alertes config ?",
+      "answer": "Notre stack de monitoring repose sur Prometheus, Grafana et AlertManager, complétée par des dashboards prêts par service. Les métriques custom sont encouragées et les alertes partent sur plusieurs canaux. L'IA ajuste les seuils pour limiter les faux positifs et garde l'œil sur les dérives.",
+      "confidence": "high",
+      "tags": [
+        "monitoring",
+        "alertes"
+      ],
+      "examples": [
+        "Créer alerte CPU"
+      ],
+      "follow_up": "Comment ajouter une nouvelle métrique à surveiller ?",
+      "search_synonyms": [
+        "surveillance système"
+      ]
+    },
+    {
+      "id": "ops-003",
+      "section": "Opérations & DevOps",
+      "question": "Gestion clusters Kubernetes ?",
+      "answer": "Les clusters Kubernetes sont pilotés via CielK8s et l'interface Rancher. Chaque équipe dispose de son namespace, d'un RBAC granulaire et de quotas définis. Les déploiements passent par Helm et ArgoCD pour le GitOps. L'IA optimise l'emplacement des pods et anticipe les besoins de scaling.",
+      "confidence": "medium",
+      "tags": [
+        "kubernetes",
+        "k8s"
+      ],
+      "examples": [
+        "Déployer app K8s"
+      ],
+      "follow_up": "Quelle procédure pour diagnostiquer un pod en crashloop ?",
+      "search_synonyms": [
+        "gestion conteneurs"
+      ]
+    },
+    {
+      "id": "ops-004",
+      "section": "Opérations & DevOps",
+      "question": "Stratégie backup récupération ?",
+      "answer": "Notre stratégie de backup suit la règle 3-2-1 : trois copies, deux supports, une hors site. Les bases de données sont sauvegardées chaque jour, les fichiers chaque semaine et les configs à chaque changement. Des tests de restauration automatiques ont lieu tous les mois, avec des objectifs RTO < 4 h et RPO < 1 h pour les services critiques.",
+      "confidence": "high",
+      "tags": [
+        "backup",
+        "recovery"
+      ],
+      "examples": [
+        "Restaurer BDD"
+      ],
+      "follow_up": "Comment lancer un test de restauration supplémentaire ?",
+      "search_synonyms": [
+        "sauvegarde données"
+      ]
+    },
+    {
+      "id": "ops-005",
+      "section": "Opérations & DevOps",
+      "question": "Infrastructure as Code ?",
+      "answer": "L'infrastructure est déclarée en code avec Terraform pour le provisioning et Ansible pour la configuration. Tous les plans passent par revue Git. L'IA analyse les `terraform plan`, repère les dérives de configuration et veille sur les state files stockés dans S3 avec verrouillage DynamoDB.",
+      "confidence": "high",
+      "tags": [
+        "iac",
+        "terraform"
+      ],
+      "examples": [
+        "Provisionner serveur"
+      ],
+      "follow_up": "Quelle est la marche à suivre pour corriger un drift détecté ?",
+      "search_synonyms": [
+        "infrastructure code"
+      ]
+    },
+    {
+      "id": "ops-006",
+      "section": "Opérations & DevOps",
+      "question": "Gestion secrets production ?",
+      "answer": "Les secrets de production vivent dans Vault. Les credentials tournent automatiquement, les accès sont donnés par rôle avec des TTL courts et l'intégration Kubernetes se fait via le driver CSI. L'IA surveille les accès inhabituels et révoque d'office un token compromis.",
+      "confidence": "high",
+      "tags": [
+        "secrets",
+        "vault"
+      ],
+      "examples": [
+        "Rotate clé API"
+      ],
+      "follow_up": "Comment demander un nouveau rôle Vault ?",
+      "search_synonyms": [
+        "gestion secrets"
+      ]
+    },
+    {
+      "id": "ops-007",
+      "section": "Opérations & DevOps",
+      "question": "Scaling capacity planning ?",
+      "answer": "Le scaling est orchestré à plusieurs niveaux : HPA sur Kubernetes, Auto Scaling Groups côté cloud et règles applicatives spécifiques. Nous suivons CPU, mémoire, requêtes/sec et indicateurs métiers. L'IA exploite l'historique pour prédire les pics et préparer un pré-scaling proactif.",
+      "confidence": "high",
+      "tags": [
+        "scaling",
+        "capacity"
+      ],
+      "examples": [
+        "Config autoscaling"
+      ],
+      "follow_up": "Comment optimiser le coût d'un service surdimensionné ?",
+      "search_synonyms": [
+        "mise   l'échelle"
+      ]
+    },
+    {
+      "id": "ops-008",
+      "section": "Opérations & DevOps",
+      "question": "Gestion incidents procédure ?",
+      "answer": "Pour la gestion d'incident, nous adaptons ITIL : détection, triage, investigation, résolution puis post-mortem. PagerDuty orchestre l'astreinte et une war room se crée automatiquement pour les P1/P2. L'IA associe les symptômes aux runbooks les plus pertinents et propose les actions suivantes.",
+      "confidence": "high",
+      "tags": [
+        "incident",
+        "management"
+      ],
+      "examples": [
+        "Gérer incident critique"
+      ],
+      "follow_up": "Comment soumettre un post-mortem pour validation ?",
+      "search_synonyms": [
+        "gestion incidents"
+      ]
+    },
+    {
+      "id": "ops-009",
+      "section": "Opérations & DevOps",
+      "question": "Sécurisation infrastructure ?",
+      "answer": "La sécurité repose sur une approche defense-in-depth : WAF, segmentation réseau, principe du moindre privilège et patching régulier. Nous appliquons les benchmarks CIS, menons des scans de vulnérabilité automatiques et un pentest externe chaque trimestre. L'IA croise les journaux sécurité 24/7 pour détécter les signaux faibles.",
+      "confidence": "high",
+      "tags": [
+        "security",
+        "hardening"
+      ],
+      "examples": [
+        "Patches sécurité"
+      ],
+      "follow_up": "Comment prioriser une vulnérabilité critique détectée ?",
+      "search_synonyms": [
+        "sécurisation infra"
+      ]
+    },
+    {
+      "id": "ops-010",
+      "section": "Opérations & DevOps",
+      "question": "Optimisation coûts infra ?",
+      "answer": "La démarche FinOps suit les coûts en temps réel, déclenche des alertes de budget et applique du right-sizing. Les workloads prévisibles passent en instances réservées, les batchs en spot quand c'est pertinent. L'IA analyse les patterns de consommation pour proposer des optimisations sans sacrifier la disponibilité.",
+      "confidence": "high",
+      "tags": [
+        "cout",
+        "finops"
+      ],
+      "examples": [
+        "Réduire facture AWS"
+      ],
+      "follow_up": "Comment préparer un rapport de coûts pour une équipe produit ?",
+      "search_synonyms": [
+        "optimisation coûts"
+      ]
+    },
+    {
+      "id": "ops-011",
+      "section": "Opérations & DevOps",
+      "question": "Centralisation logs analyse ?",
+      "answer": "Les logs convergent dans notre stack ELK via Beats. Le parsing est automatisé, l'indexation optimisée et la rétention configurable selon la sensibilité. L'IA détecte les anomalies, corrèle les événements multi-services et anonymise les données sensibles avant stockage.",
+      "confidence": "high",
+      "tags": [
+        "logs",
+        "elk"
+      ],
+      "examples": [
+        "Rechercher logs erreur"
+      ],
+      "follow_up": "Comment créer un filtre saved search pour un incident en cours ?",
+      "search_synonyms": [
+        "agrégation logs"
+      ]
+    },
+    {
+      "id": "ops-012",
+      "section": "Opérations & DevOps",
+      "question": "Disaster recovery plan ?",
+      "answer": "Le plan de reprise d'activité couvre plusieurs sites avec des RTO/RPO définis. La réplication se fait en synchrone ou asynchrone selon la criticité et un basculement automatique est prévu pour les services Tier 1. Des tests trimestriels de type chaos engineering valident le dispositif pendant que l'IA simule des scénarios de panne pour tester la résilience.",
+      "confidence": "high",
+      "tags": [
+        "disaster-recovery",
+        "dr"
+      ],
+      "examples": [
+        "Tester plan reprise"
+      ],
+      "follow_up": "Comment proposer une amélioration du plan DR ?",
+      "search_synonyms": [
+        "plan continuité"
+      ]
+    },
+    {
+      "id": "data-001",
+      "section": "Data & RAG",
+      "question": "Implémenter système RAG ?",
+      "answer": "Pipeline complet : ingestion > chunking > embedding > indexation > retrieval > generation. Stack LangChain+ChromaDB+Llama/Mistral. L'IA optimise les chunks selon les documents, ajuste le retrieval en temps réel. Coût hébergement local = 0 après setup !",
+      "confidence": "high",
+      "tags": [
+        "rag",
+        "implementation"
+      ],
+      "examples": [
+        "Créer chatbot RAG"
+      ],
+      "follow_up": "valuer qualité RAG ?",
+      "search_synonyms": [
+        "système RAG"
+      ]
+    },
+    {
+      "id": "data-002",
+      "section": "Data & RAG",
+      "question": "Stratégies chunking documents ?",
+      "answer": "Adaptatif par type : fixed-size (logs), semantic (articles), recursive (code), document-structure (PDFs). Tailles optimales : 512 tokens FAQ, 1024 docs techniques. IA recommande stratégie optimale.",
+      "confidence": "high",
+      "tags": [
+        "chunking",
+        "documents"
+      ],
+      "examples": [
+        "Découper PDFs"
+      ],
+      "follow_up": "Documents multi-langues ?",
+      "search_synonyms": [
+        "segmentation texte"
+      ]
+    },
+    {
+      "id": "data-003",
+      "section": "Data & RAG",
+      "question": "Modèles embedding comparaison ?",
+      "answer": "Benchmarks internes : all-MiniLM-L6-v2 (léger), OpenAI text-embedding-3 (précis, payant), BGE-M3 (multilingue). IA teste plusieurs modèles vos données, recommande meilleur trade-off qualité/performance.",
+      "confidence": "high",
+      "tags": [
+        "embedding",
+        "models"
+      ],
+      "examples": [
+        "Choisir modèle"
+      ],
+      "follow_up": "Fine-tuner embedding ?",
+      "search_synonyms": [
+        "modèles vectoriels"
+      ]
+    },
+    {
+      "id": "data-004",
+      "section": "Data & RAG",
+      "question": "Bases données vectorielles ?",
+      "answer": "Comparatif : ChromaDB (simple, local), Pinecone (cloud, scalable), Weaviate (hybrid), Qdrant (performant, Rust). IA analyse patterns usage, peut migrer automatiquement entre solutions.",
+      "confidence": "high",
+      "tags": [
+        "vector-db",
+        "chromadb"
+      ],
+      "examples": [
+        "Config ChromaDB"
+      ],
+      "follow_up": "Optimiser perf vectorielle ?",
+      "search_synonyms": [
+        "base vectorielle"
+      ]
+    },
+    {
+      "id": "data-005",
+      "section": "Data & RAG",
+      "question": "Hébergement LLMs local ?",
+      "answer": "Stack recommandée : Ollama + vLLM + Text Generation WebUI. Modèles optimisés : Llama3 8B, Mistral 7B, CodeLlama. Quantization GGUF pour économiser la RAM. Coût total ~3000 EUR de hardware pour un setup de production. ROI positif 6 mois vs APIs externes !",
+      "confidence": "high",
+      "tags": [
+        "llm",
+        "local",
+        "ollama"
+      ],
+      "examples": [
+        "Installer Ollama"
+      ],
+      "follow_up": "Scaler LLMs locaux ?",
+      "search_synonyms": [
+        "hébergement local"
+      ]
+    },
+    {
+      "id": "data-006",
+      "section": "Data & RAG",
+      "question": "Prompt engineering RAG ?",
+      "answer": "Templates éprouvés : system prompts contexte métier, few-shot examples, chain-of-thought. Techniques CielNet : prompt versioning, A/B testing auto, adaptation dynamique utilisateur. IA optimise automatiquement prompts.",
+      "confidence": "high",
+      "tags": [
+        "prompt",
+        "engineering"
+      ],
+      "examples": [
+        "Optimiser prompt RAG"
+      ],
+      "follow_up": "valuer efficacité prompt ?",
+      "search_synonyms": [
+        "ingénierie prompts"
+      ]
+    },
+    {
+      "id": "data-007",
+      "section": "Data & RAG",
+      "question": "Conformité RGPD RAG ?",
+      "answer": "Privacy by design : anonymisation auto, détection PII, consent management. Droit oubli : suppression selective bases vectorielles, reindexation auto. IA scanne contenus sensibles, masque données personnelles.",
+      "confidence": "high",
+      "tags": [
+        "privacy",
+        "rgpd"
+      ],
+      "examples": [
+        "Anonymiser données RAG"
+      ],
+      "follow_up": "Auditer conformité ?",
+      "search_synonyms": [
+        "conformité données"
+      ]
+    },
+    {
+      "id": "data-008",
+      "section": "Data & RAG",
+      "question": "Optimiser coûts RAG production ?",
+      "answer": "Stratégies FinOps : cache multi-niveaux, batch processing embeddings, modèles locaux vs APIs payantes. IA prédit coûts futurs, optimise routing modèles selon budget/qualité. ROI moyen 60% économies vs cloud pur.",
+      "confidence": "high",
+      "tags": [
+        "cost",
+        "optimization"
+      ],
+      "examples": [
+        "Réduire coûts RAG"
+      ],
+      "follow_up": "Prévoir coûts scaling ?",
+      "search_synonyms": [
+        "optimisation coûts"
+      ]
+    },
+    {
+      "id": "secu-001",
+      "section": "Sécurité & Privacy",
+      "question": "Incident sécurité procédure ?",
+      "answer": "CERT CielNet : détection > confinement > éradication > récupération > lessons learned. Astreinte 24/7, escalade auto selon gravité. L'IA analyse les IOCs, déclenche le confinement préventif. War room sécurisée, MTTR moyen 2h P1.",
+      "confidence": "high",
+      "tags": [
+        "incident",
+        "security"
+      ],
+      "examples": [
+        "Gérer attaque"
+      ],
+      "follow_up": "Communication incident clients ?",
+      "search_synonyms": [
+        "incident sécurité"
+      ]
+    },
+    {
+      "id": "secu-002",
+      "section": "Sécurité & Privacy",
+      "question": "Gestion vulnérabilités patches ?",
+      "answer": "Scanning auto Nessus + Qualys, corrélation CVE temps réel. Priorisation CVSS + impact métier + exploitabilité. L'IA prédit les vulnérabilités critiques, planifie les patches selon les fenêtres de maintenance. SLA : Critical 24h, High 72h.",
+      "confidence": "high",
+      "tags": [
+        "vulnerabilites",
+        "patches"
+      ],
+      "examples": [
+        "Prioriser vulns"
+      ],
+      "follow_up": "Tester patches ?",
+      "search_synonyms": [
+        "gestion vulnérabilités"
+      ]
+    },
+    {
+      "id": "secu-003",
+      "section": "Sécurité & Privacy",
+      "question": "Revues accès certifications ?",
+      "answer": "Revue trimestrielle auto : export droits, validation managers, attestation conformité. L'IA détecte comptes dormants, privilèges anormaux. Workflow ServiceNow, deadline 15 j sinon revoke.",
+      "confidence": "high",
+      "tags": [
+        "access-review",
+        "certification"
+      ],
+      "examples": [
+        "Certifier accès utilisateurs"
+      ],
+      "follow_up": "Automatiser révocation ?",
+      "search_synonyms": [
+        "revue accès"
+      ]
+    },
+    {
+      "id": "secu-004",
+      "section": "Sécurité & Privacy",
+      "question": "Classification protection données ?",
+      "answer": "4 niveaux : Public, Internal, Confidential, Restricted. Labels auto basés contenu/contexte, protection adaptive (chiffrement, DLP). L'IA scanne les nouveaux documents, détecte les fuites potentielles.",
+      "confidence": "high",
+      "tags": [
+        "classification",
+        "data"
+      ],
+      "examples": [
+        "Classifier documents sensibles"
+      ],
+      "follow_up": "Formation classification ?",
+      "search_synonyms": [
+        "classification données"
+      ]
+    },
+    {
+      "id": "secu-005",
+      "section": "Sécurité & Privacy",
+      "question": "Standards chiffrement ?",
+      "answer": "AES-256 at-rest, TLS 1.3 in-transit, RSA 4096/ECC P-384 signatures. Chiffrement transparent BDD, HSM clés critiques. L'IA surveille les algorithmes dépréciés, migre automatiquement. FIPS 140-2 Level 3 gouvernement.",
+      "confidence": "high",
+      "tags": [
+        "chiffrement",
+        "encryption"
+      ],
+      "examples": [
+        "Implémenter chiffrement BDD"
+      ],
+      "follow_up": "Escrow clés ?",
+      "search_synonyms": [
+        "cryptographie"
+      ]
+    },
+    {
+      "id": "secu-006",
+      "section": "Sécurité & Privacy",
+      "question": "Protection phishing ?",
+      "answer": "Défense multicouche : Proofpoint email, formations, simulations mensuelles. DNS filtering, URL rewriting, sandbox auto PJ. L'IA analyse les patterns d'attaque, bloque les nouvelles campagnes proactivement. Taux de clic simulé <5 %.",
+      "confidence": "high",
+      "tags": [
+        "phishing",
+        "email"
+      ],
+      "examples": [
+        "Bloquer email suspect"
+      ],
+      "follow_up": "Mesurer efficacité formations ?",
+      "search_synonyms": [
+        "protection phishing"
+      ]
+    },
+    {
+      "id": "secu-007",
+      "section": "Sécurité & Privacy",
+      "question": "Architecture Zero Trust ?",
+      "answer": "Approche progressive : identity verification, device compliance, micro-segmentation réseau, data protection. Conditional access risk scoring continu. L'IA évalue le trust score des transactions, bloque les comportements anormaux.",
+      "confidence": "medium",
+      "tags": [
+        "zero-trust",
+        "architecture"
+      ],
+      "examples": [
+        "Déployer Zero Trust"
+      ],
+      "follow_up": "Maturité Zero Trust ?",
+      "search_synonyms": [
+        "architecture zero trust"
+      ]
+    },
+    {
+      "id": "secu-008",
+      "section": "Sécurité & Privacy",
+      "question": "Threat hunting activités ?",
+      "answer": "Programme structuré : hypothesis-driven hunting, IOC development. Outils MITRE ATT&CK, Splunk/ELK analytics, Yara rules custom. L'IA corrèle les indicateurs multi-sources, suggère les pistes de hunting. 2h/jour analyste, ROI 3 incidents évités/mois.",
+      "confidence": "medium",
+      "tags": [
+        "threat-hunting",
+        "detection"
+      ],
+      "examples": [
+        "Chasser menaces avancées"
+      ],
+      "follow_up": "Règles détection custom ?",
+      "search_synonyms": [
+        "chasse menaces"
+      ]
+    },
+    {
+      "id": "secu-009",
+      "section": "Sécurité & Privacy",
+      "question": "Conformité référentiels sécurité ?",
+      "answer": "Multi-frameworks : ISO 27001 (base), SOC 2 (cloud), NIST (gouvernement), ANSSI (France). Mapping auto contrôles, evidence collection centralisée. L'IA identifie les gaps, génère des plans d'action de remédiation.",
+      "confidence": "high",
+      "tags": [
+        "compliance",
+        "iso27001"
+      ],
+      "examples": [
+        "Préparer audit ISO"
+      ],
+      "follow_up": "Automatiser preuves ?",
+      "search_synonyms": [
+        "conformité sécurité"
+      ]
+    },
+    {
+      "id": "secu-010",
+      "section": "Sécurité & Privacy",
+      "question": "Privacy by Design développement ?",
+      "answer": "Principes appliqués : minimisation données, purpose limitation, pseudonymisation défaut. PIA obligatoire nouveaux projets. L'IA scanne le code pour les risques privacy, suggère des améliorations. Templates GDPR-compliant, consent management intégré.",
+      "confidence": "high",
+      "tags": [
+        "privacy",
+        "design"
+      ],
+      "examples": [
+        "Implémenter privacy by design"
+      ],
+      "follow_up": "Former équipes Privacy by Design ?",
+      "search_synonyms": [
+        "vie privée conception"
+      ]
+    },
+    {
+      "id": "secu-011",
+      "section": "Sécurité & Privacy",
+      "question": "Gouvernance identité accès ?",
+      "answer": "IGA platform complète : provisioning/deprovisioning auto, workflow approbations, segregation of duties. Identity lifecycle onboarding/départ. L'IA détecte anomalies accès, recommande ajustements privilèges.",
+      "confidence": "high",
+      "tags": [
+        "identity",
+        "governance"
+      ],
+      "examples": [
+        "Automatiser provisioning"
+      ],
+      "follow_up": "Comptes service ?",
+      "search_synonyms": [
+        "gouvernance identité"
+      ]
+    },
+    {
+      "id": "secu-012",
+      "section": "Sécurité & Privacy",
+      "question": "Sécurité cloud multi-provider ?",
+      "answer": "CSPM Prisma/Wiz, configuration baselines auto par provider. Shared responsibility model défini, security groups restrictifs par défaut. L'IA surveille les drifts de config, corrige les misconfigurations communes.",
+      "confidence": "high",
+      "tags": [
+        "cloud",
+        "security"
+      ],
+      "examples": [
+        "Sécuriser déploiement AWS"
+      ],
+      "follow_up": "Clés chiffrement cloud ?",
+      "search_synonyms": [
+        "sécurité cloud"
+      ]
+    },
+    {
+      "id": "secu-013",
+      "section": "Sécurité & Privacy",
+      "question": "Menaces internes détection ?",
+      "answer": "Behavioral analytics Exabeam, DLP avancé, monitoring privilégiés. Indicateurs : accès inhabituels, téléchargements massifs. L'IA apprend les patterns normaux, alerte les déviations. Approche bienveillante : investigation discrète.",
+      "confidence": "medium",
+      "tags": [
+        "insider",
+        "threats"
+      ],
+      "examples": [
+        "Détecter comportement suspect"
+      ],
+      "follow_up": "quilibrer sécu/privacy ?",
+      "search_synonyms": [
+        "menaces internes"
+      ]
+    },
+    {
+      "id": "secu-014",
+      "section": "Sécurité & Privacy",
+      "question": "Continuité activité incident sécurité ?",
+      "answer": "Plan continuité sécurisé : sites backup isolés, communications chiffrées, decision trees pré-établies. Isolation auto systèmes compromis, bascule environnement secours. L'IA déclenche automatiquement les procédures selon l'ampleur.",
+      "confidence": "high",
+      "tags": [
+        "continuity",
+        "business"
+      ],
+      "examples": [
+        "Activer plan continuité"
+      ],
+      "follow_up": "Tester plan continuité ?",
+      "search_synonyms": [
+        "continuité activité"
+      ]
+    },
+    {
+      "id": "legal-001",
+      "section": "Juridique & Conformité",
+      "question": "Review contrats procédure ?",
+      "answer": "Workflow CielLaw : demande > review juridique > négociation > validation > signature électronique. Templates pré-approuvés standards, escalade clauses non standard. L'IA analyse les risques contractuels, identifie les clauses problématiques. DocuSign intégré, archivage 10 ans.",
+      "confidence": "high",
+      "tags": [
+        "contracts",
+        "review"
+      ],
+      "examples": [
+        "Reviewer contrat client"
+      ],
+      "follow_up": "Accélérer validation ?",
+      "search_synonyms": [
+        "révision contrats"
+      ]
+    },
+    {
+      "id": "legal-002",
+      "section": "Juridique & Conformité",
+      "question": "Conformité RGPD quotidien ?",
+      "answer": "Programme RGPD intégré : registre des traitements à jour, PIA auto, formations obligatoires. DPO externe certifié, procédures violations 72h. L'IA surveille les traitements de données, alerte les non-conformités potentielles. Droits personnes automatisés.",
+      "confidence": "high",
+      "tags": [
+        "rgpd",
+        "conformite"
+      ],
+      "examples": [
+        "Traiter demande droit accès"
+      ],
+      "follow_up": "Réaliser PIA ?",
+      "search_synonyms": [
+        "RGPD conformité"
+      ]
+    },
+    {
+      "id": "legal-003",
+      "section": "Juridique & Conformité",
+      "question": "Propriété intellectuelle gestion ?",
+      "answer": "Stratégie IP complète : dépôts brevets/marques, contrats cession IP employés, veille concurrentielle. Portefeuille 23 brevets logiciels, 12 marques. IA surveille violations potentielles, identifie innovations brevetables. Budget annuel 150k.",
+      "confidence": "medium",
+      "tags": [
+        "propriete",
+        "intellectuelle"
+      ],
+      "examples": [
+        "Déposer brevet"
+      ],
+      "follow_up": "Valoriser portefeuille IP ?",
+      "search_synonyms": [
+        "propriété intellectuelle"
+      ]
+    },
+    {
+      "id": "legal-004",
+      "section": "Juridique & Conformité",
+      "question": "Obligations droit travail ?",
+      "answer": "Veille réglementaire permanente : Code du travail, conventions Syntec, jurisprudence. Procédures disciplinaires conformes, respect des durées de travail, égalité pro. L'IA surveille les évolutions réglementaires, alerte sur les impacts organisationnels. Contentieux prud'homal : 0 depuis 3 ans.",
+      "confidence": "high",
+      "tags": [
+        "droit",
+        "travail"
+      ],
+      "examples": [
+        "Procédure disciplinaire"
+      ],
+      "follow_up": "Former managers droit social ?",
+      "search_synonyms": [
+        "droit du travail"
+      ]
+    },
+    {
+      "id": "legal-005",
+      "section": "Juridique & Conformité",
+      "question": "Veille réglementaire organisation ?",
+      "answer": "Veille auto multi-sources : Journal Officiel, alertes sectorielles, think tanks. Analyse impact réglementaire systématique, plan actions défini. IA traite flux réglementaires, identifie textes impactants selon activités. Anticipation moyenne 6 mois.",
+      "confidence": "high",
+      "tags": [
+        "veille",
+        "reglementaire"
+      ],
+      "examples": [
+        "Surveiller nouvelles réglementations"
+      ],
+      "follow_up": "Prioriser impacts réglementaires ?",
+      "search_synonyms": [
+        "veille juridique"
+      ]
+    },
+    {
+      "id": "legal-006",
+      "section": "Juridique & Conformité",
+      "question": "Encadrement juridique IA entreprise ?",
+      "answer": "Charte éthique IA adoptée : transparence, équité, responsabilité, privacy by design. Comité éthique multidisciplinaire, audits algorithmiques réguliers. L'IA CielNet s'auto-évalue sur les critères éthiques, signale les biais potentiels (méta !). Conformité AI Act européen anticipée.",
+      "confidence": "medium",
+      "tags": [
+        "ia",
+        "ethics"
+      ],
+      "examples": [
+        "Auditer éthique IA"
+      ],
+      "follow_up": "Mesurer équité algorithmes ?",
+      "search_synonyms": [
+        "éthique intelligence artificielle"
+      ]
+    },
+    {
+      "id": "demo-001",
+      "section": "Scénarios de démo",
+      "question": "BUG - Impossible connexion ce matin, erreur 'Invalid credentials'",
+      "answer": "Incident confirmé cluster auth CielAuth suite MAJ nocturne. L'IA a détecté l'anomalie à 6h32 et a basculé automatiquement sur le cluster backup. Résolution par l'équipe DevOps, ETA 45 min. Contournement : backup.cielnet.com avec identifiants habituels.",
+      "confidence": "high",
+      "tags": [
+        "bug",
+        "authentification",
+        "incident"
+      ],
+      "examples": [
+        "Problème connexion"
+      ],
+      "follow_up": "viter incident futur ?",
+      "search_synonyms": [
+        "erreur connexion"
+      ]
+    },
+    {
+      "id": "demo-002",
+      "section": "Scénarios de démo",
+      "question": "INCIDENT - CielWork très lente depuis 2 jours, timeouts fréquents",
+      "answer": "Analyse de l'IA CielNet : pic d'usage +300 % suite au lancement de la recherche sémantique. Auto-scaling déclenché mais insuffisant. Actions : +50 % instances, optimisation des requêtes BDD, cache Redis renforcé. Retour à la normale <= 2 h. Monitoring renforcé pendant 48 h.",
+      "confidence": "high",
+      "tags": [
+        "performance",
+        "lenteur"
+      ],
+      "examples": [
+        "App qui rame"
+      ],
+      "follow_up": "Monitoring temps réel ?",
+      "search_synonyms": [
+        "lenteur application"
+      ]
+    },
+    {
+      "id": "demo-003",
+      "section": "Scénarios de démo",
+      "question": "DEMANDE - Export Excel module reporting ?",
+      "answer": "Excellente suggestion ! Feature backlog priorité haute. L'IA a analysé les demandes : top 3 des features les plus attendues. Développement sprint 47 (décembre), livraison mi-janvier. Contournement temporaire : export CSV puis conversion.",
+      "confidence": "high",
+      "tags": [
+        "feature-request",
+        "export"
+      ],
+      "examples": [
+        "Demander fonctionnalité"
+      ],
+      "follow_up": "Suivre avancement ?",
+      "search_synonyms": [
+        "nouvelle fonction"
+      ]
+    },
+    {
+      "id": "demo-004",
+      "section": "Scénarios de démo",
+      "question": "ALERTE SÉCURITÉ - Email suspect reçu par la direction",
+      "answer": "Merci remontée rapide ! L'IA a analysé l'email : phishing confirmé (score 9.2/10). Expéditeur bloqué automatiquement, emails similaires supprimés des boîtes. Campagne touchant 47 entreprises françaises aujourd'hui. Vigilance protège l'organisation - bravo !",
+      "confidence": "high",
+      "tags": [
+        "securite",
+        "phishing"
+      ],
+      "examples": [
+        "Email suspect"
+      ],
+      "follow_up": "Reconnaître phishing ?",
+      "search_synonyms": [
+        "email frauduleux"
+      ]
+    },
+    {
+      "id": "demo-005",
+      "section": "Scénarios de démo",
+      "question": "URGENT - Nouveau collaborateur lundi, accès nécessaires",
+      "answer": "Procédure d'urgence activée ! L'IA créera les comptes de base en 2 h (email, Slack, réseau). Accès spécialisés : validation manager + IT. Checklist buddy envoyée. Laptop configuré prêt au retrait. Pro tip : prévoir 48 h à l'avenir pour éviter le stress !",
+      "confidence": "high",
+      "tags": [
+        "urgence",
+        "acces"
+      ],
+      "examples": [
+        "Onboarding express"
+      ],
+      "follow_up": "Accès auto possibles ?",
+      "search_synonyms": [
+        "nouveau salarié urgent"
+      ]
+    },
+    {
+      "id": "demo-006",
+      "section": "Scénarios de démo",
+      "question": "CRITIQUE - Supprimé dossier important par erreur, récupération ?",
+      "answer": "Situation critique mais récupérable ! L'IA a identifié la suppression dans les logs à 14h23. Sauvegarde de ce matin à 3 h. Restauration dans un environnement isolé en cours. Données restaurées 45 min max. Pour éviter la récidive : corbeille réseau 30 j, historique de versions activé.",
+      "confidence": "high",
+      "tags": [
+        "critique",
+        "suppression"
+      ],
+      "examples": [
+        "Récupérer fichiers"
+      ],
+      "follow_up": "Config sauvegardes auto ?",
+      "search_synonyms": [
+        "données perdues"
+      ]
+    },
+    {
+      "id": "demo-007",
+      "section": "Scénarios de démo",
+      "question": "TECHNIQUE - Intégration API Salesforce cassée hier",
+      "answer": "Incident confirmé ! Salesforce a déployé l'API v58 et casse la rétrocompatibilité (merci Salesforce...). L'IA a détecté l'incompatibilité et prépare un patch auto. Solution temporaire : bascule v57 via config. Correctif permanent 24 h avec support v58.",
+      "confidence": "high",
+      "tags": [
+        "integration",
+        "api"
+      ],
+      "examples": [
+        "Problème API externe"
+      ],
+      "follow_up": "Surveiller intégrations ?",
+      "search_synonyms": [
+        "intégration cassée"
+      ]
+    },
+    {
+      "id": "demo-008",
+      "section": "Scénarios de démo",
+      "question": "DEMANDE - Formation nouveau module CielAnalytics ?",
+      "answer": "Compréhensible, CielAnalytics est puissant mais dense ! Tutoriel guidé 45 min + session live jeudi à 14 h avec expert produit. L'IA peut assister en temps réel via le chatbot intégré. Documentation mise à jour la semaine dernière avec vidéos step-by-step.",
+      "confidence": "high",
+      "tags": [
+        "formation",
+        "analytics"
+      ],
+      "examples": [
+        "Apprendre outil"
+      ],
+      "follow_up": "Formations enregistrées ?",
+      "search_synonyms": [
+        "apprentissage outil"
+      ]
+    },
+    {
+      "id": "demo-009",
+      "section": "Scénarios de démo",
+      "question": "INFO - Maintenance weekend, services impactés ?",
+      "answer": "Maintenance samedi 2 h-6 h : MAJ sécurité K8s + migration BDD. Impactés : CielWork (indispo 4 h), CielMail (ralentissements), APIs externes (+2 s timeout). Maintenus : Slack, téléphonie, internet. L'IA supervise automatiquement, rollback si problème.",
+      "confidence": "high",
+      "tags": [
+        "maintenance",
+        "plannifiee"
+      ],
+      "examples": [
+        "Maintenance système"
+      ],
+      "follow_up": "Notifications futures ?",
+      "search_synonyms": [
+        "maintenance planifiée"
+      ]
+    },
+    {
+      "id": "demo-010",
+      "section": "Scénarios de démo",
+      "question": "COMPTABILIT - Erreur facture #FAC-2024-1847",
+      "answer": "Erreur confirmée par l'IA : bug calcul remises progressives (corrigé). Impact 12 factures 3 jours, écart moyen +15 %. Correction immédiate : avoirs générés auto, clients notifiés excuses. Nouvelles factures correctes envoyées. Contrôles qualité renforcés.",
+      "confidence": "high",
+      "tags": [
+        "facturation",
+        "erreur"
+      ],
+      "examples": [
+        "Corriger erreur facture"
+      ],
+      "follow_up": "viter erreurs facturation ?",
+      "search_synonyms": [
+        "erreur facture"
+      ]
+    },
+    {
+      "id": "demo-011",
+      "section": "Scénarios de démo",
+      "question": "RÉSEAU - WiFi instable 3ème étage",
+      "answer": "Problème identifié ! L'IA a détecté des interférences 5GHz voisin (colocation...). Solution immédiate : basculement sur d'autres canaux + boost de puissance. Définitive : 2 bornes WiFi 6E supplémentaires mardi. Temporaire : CielNet-Corp-2 plus stable pour l'étage.",
+      "confidence": "high",
+      "tags": [
+        "wifi",
+        "reseau"
+      ],
+      "examples": [
+        "Problème WiFi"
+      ],
+      "follow_up": "Optimiser couverture ?",
+      "search_synonyms": [
+        "wifi instable"
+      ]
+    },
+    {
+      "id": "demo-012",
+      "section": "Scénarios de démo",
+      "question": "PATCH - MAJ sécurité critique tous postes",
+      "answer": "Alerte sécurité CVE-2024-XXXX critique (CVSS 9.8) ! L'IA a analysé l'exposition : 847 machines. Déploiement auto programmé : 50 % ce soir, 50 % demain matin. Redémarrage requis, sauvegardez ! Machines non patchées 48 h = isolées réseau.",
+      "confidence": "high",
+      "tags": [
+        "securite",
+        "patch"
+      ],
+      "examples": [
+        "Déployer patch sécurité"
+      ],
+      "follow_up": "Vérifier MAJ poste ?",
+      "search_synonyms": [
+        "patch sécurité"
+      ]
+    },
+    {
+      "id": "demo-013",
+      "section": "Scénarios de démo",
+      "question": "PROJET - Migration cloud impact workflows ?",
+      "answer": "Migration CielCloud Phase 1 ! 30 % services migrés fin mars, 100 % avant été. Impact workflows : URLs changent (redirections 6 mois), nouvelles fonctionnalités (collab temps réel, mobile sync). Formation obligatoire 2 h utilisateur. Benefits : +50 % perf, 99.9 % uptime.",
+      "confidence": "high",
+      "tags": [
+        "migration",
+        "cloud"
+      ],
+      "examples": [
+        "Migrer vers cloud"
+      ],
+      "follow_up": "Préparer migration ?",
+      "search_synonyms": [
+        "migration cloud"
+      ]
+    },
+    {
+      "id": "demo-014",
+      "section": "Scénarios de démo",
+      "question": "AUDIT - Préparation ISO 27001, documents fournir ?",
+      "answer": "Audit 3 semaines ! L'IA a collecté automatiquement 89 % des pièces requises (politiques, logs, preuves formation). Manquant : attestations managers (deadline vendredi), test restore (demain). Simulation audit blanc jeudi consultant externe. Confiance élevée certification !",
+      "confidence": "high",
+      "tags": [
+        "audit",
+        "iso27001"
+      ],
+      "examples": [
+        "Préparer audit"
+      ],
+      "follow_up": "Maintenir certification ?",
+      "search_synonyms": [
+        "audit ISO"
+      ]
+    },
+    {
+      "id": "demo-015",
+      "section": "Scénarios de démo",
+      "question": "SUPPORT - Lenteur générale applications internes",
+      "answer": "Incident performance généralisé identifié. Cause : saturation réseau suite à des tests de charge non planifiés équipe QA. L'IA a détecté les patterns anormaux et restreint automatiquement la bande passante des tests. Actions : arrêt des tests, redémarrage des services impactés, monitoring renforcé. Résolution complète estimée 30 minutes.",
+      "confidence": "high",
+      "tags": [
+        "performance",
+        "lenteur",
+        "reseau"
+      ],
+      "examples": [
+        "Applications lentes"
+      ],
+      "follow_up": "Planifier tests charge ?",
+      "search_synonyms": [
+        "lenteur généralisée",
+        "problème performance"
+      ]
+    },
+    {
+      "id": "demo-016",
+      "section": "Scénarios de démo",
+      "question": "DEMANDE - Accès temporaire base production pour debug",
+      "answer": "Demande d'accès production analysée. Procédure exceptionnelle : justification écrite manager, validation CISO, accès read-only 2 h max avec supervision. L'IA masquera automatiquement les données sensibles. Alternative recommandée : restauration d'un subset prod en environnement debug sécurisé.",
+      "confidence": "medium",
+      "tags": [
+        "acces",
+        "production",
+        "debug"
+      ],
+      "examples": [
+        "Debug en production"
+      ],
+      "follow_up": "Alternatives debug sécurisées ?",
+      "search_synonyms": [
+        "accès production temporaire"
+      ]
+    },
+    {
+      "id": "demo-017",
+      "section": "Scénarios de démo",
+      "question": "INCIDENT - Emails importants bloqués spam",
+      "answer": "Filtre anti-spam sur-agressif suite MAJ règles ce matin. L'IA a identifié +300 % de faux positifs. Actions immédiates : règles réajustées, emails en quarantaine libérés, notification des expéditeurs impactés. Cause racine : nouvelle signature incluait des mots-clés business légitimes.",
+      "confidence": "high",
+      "tags": [
+        "email",
+        "spam",
+        "filtre"
+      ],
+      "examples": [
+        "Emails bloqués"
+      ],
+      "follow_up": "Whitelist expéditeurs ?",
+      "search_synonyms": [
+        "filtre spam agressif"
+      ]
+    },
+    {
+      "id": "demo-018",
+      "section": "Scénarios de démo",
+      "question": "DEMANDE - Intégration nouveau partenaire API",
+      "answer": "Analyse intégration partenaire TechCorp en cours. L'IA évalue la compatibilité des APIs : OpenAPI 3.0 OK, rate limiting adaptatif requis. Estimation développement : 2 sprints. Sandbox partenaire disponible pour tests. Documentation technique transmise à l'équipe dev. Go/no-go vendredi comité architecture.",
+      "confidence": "medium",
+      "tags": [
+        "integration",
+        "partenaire",
+        "api"
+      ],
+      "examples": [
+        "Nouveau partenaire"
+      ],
+      "follow_up": "Timeline intégration ?",
+      "search_synonyms": [
+        "intégration partenaire"
+      ]
+    },
+    {
+      "id": "demo-019",
+      "section": "Scénarios de démo",
+      "question": "ALERTE - Pic consommation inattendu serveurs",
+      "answer": "Pic ressources serveurs détecté à 14h35. L'IA a identifié la cause : job batch mal configuré consommant 90 % CPU cluster. Action automatique : limitation des ressources du job, scaling horizontal déclenché. Impact utilisateurs minimisé grâce à la réaction rapide. Investigation post-incident programmée pour éviter la récurrence.",
+      "confidence": "high",
+      "tags": [
+        "performance",
+        "serveurs",
+        "ressources"
+      ],
+      "examples": [
+        "Pic consommation"
+      ],
+      "follow_up": "Optimiser jobs batch ?",
+      "search_synonyms": [
+        "surcharge serveurs"
+      ]
+    },
+    {
+      "id": "demo-020",
+      "section": "Scénarios de démo",
+      "question": "FORMATION - Session sécurité obligatoire manquée",
+      "answer": "Rattrapage formation sécurité organisé. L'IA a détecté votre absence à la session obligatoire du 15/10. Sessions makeup : mercredi 14h (présentiel), jeudi 16h (visio), module e-learning 24/7. Deadline compliance : fin mois. Certificat généré automatiquement après completion.",
+      "confidence": "high",
+      "tags": [
+        "formation",
+        "securite",
+        "compliance"
+      ],
+      "examples": [
+        "Rattrapage formation"
+      ],
+      "follow_up": "Autres formations obligatoires ?",
+      "search_synonyms": [
+        "formation manquée"
+      ]
+    },
+    {
+      "id": "demo-021",
+      "section": "Scénarios de démo",
+      "question": "TECHNIQUE - Base données dev corrompue",
+      "answer": "Corruption BDD dev détectée ! L'IA a analysé les logs : arrêt brutal serveur pendant transaction longue. Restauration automatique depuis backup de 6 h en cours. ETA : 45 min. Environnement dev alternatif CielDev-2 dispo immédiatement pour ne pas bloquer les développements. Post-mortem prévu pour améliorer la résilience.",
+      "confidence": "high",
+      "tags": [
+        "database",
+        "corruption",
+        "dev"
+      ],
+      "examples": [
+        "BDD corrompue"
+      ],
+      "follow_up": "Environnements alternatifs ?",
+      "search_synonyms": [
+        "corruption base données"
+      ]
+    },
+    {
+      "id": "demo-022",
+      "section": "Scénarios de démo",
+      "question": "INFO - Nouvelle version CielWork disponible",
+      "answer": "CielWork v3.2 déployée ! Nouveautés : recherche sémantique améliorée, interface mobile responsive, intégration calendrier. L'IA guide la migration des données automatiquement. Formation optionnelle sur les nouvelles features mardi 10 h. Documentation mise à jour, tutoriels vidéo disponibles sur le portail. Feedback utilisateurs bienvenu via #cielwork-feedback.",
+      "confidence": "high",
+      "tags": [
+        "release",
+        "nouvelle-version",
+        "cielwork"
+      ],
+      "examples": [
+        "Nouvelle version"
+      ],
+      "follow_up": "Formation nouvelles features ?",
+      "search_synonyms": [
+        "mise à jour CielWork"
+      ]
+    },
+    {
+      "id": "demo-023",
+      "section": "Scénarios de démo",
+      "question": "DEMANDE - Augmentation quotas stockage équipe",
+      "answer": "Demande quota stockage analysée. Usage actuel : 85 % limite (4.2TB/5TB). L'IA recommande une augmentation à 7.5TB basée sur la croissance des données. Justification approuvée : projets IA nécessitent des datasets volumineux. Mise à jour du quota effective sous 2 h. Monitoring automatique avec alertes à 90 % d'utilisation.",
+      "confidence": "high",
+      "tags": [
+        "stockage",
+        "quotas",
+        "ressources"
+      ],
+      "examples": [
+        "Augmenter stockage"
+      ],
+      "follow_up": "Optimiser stockage ?",
+      "search_synonyms": [
+        "quota stockage"
+      ]
+    },
+    {
+      "id": "demo-024",
+      "section": "Scénarios de démo",
+      "question": "INCIDENT - Certificats SSL expirés sites web",
+      "answer": "Expiration certificats SSL détectée ! La surveillance IA avait alerté J-7 mais le ticket a fini en spam (ironie...). Renouvellement automatique échoué : changement DNS récent. Actions : certificats manuels générés, déployés sur les sites critiques. Correctif d'automatisation du renouvellement en cours. Impact clients <30 min.",
+      "confidence": "high",
+      "tags": [
+        "ssl",
+        "certificats",
+        "expiration"
+      ],
+      "examples": [
+        "Certificats expirés"
+      ],
+      "follow_up": "Automatiser renouvellement ?",
+      "search_synonyms": [
+        "SSL expiré"
+      ]
+    },
+    {
+      "id": "demo-025",
+      "section": "Scénarios de démo",
+      "question": "DEMANDE - Accès données anonymisées pour recherche",
+      "answer": "Demande dataset recherche évaluée. L'IA propose une extraction de 100k enregistrements anonymisés selon protocole RGPD : suppression PII, généralisation attributs sensibles, k-anonymité garantie. Dataset généré format CSV/JSON. Accord confidentialité requis avant transmission. Revue comité éthique données si publication prévue.",
+      "confidence": "medium",
+      "tags": [
+        "donnees",
+        "anonymisation",
+        "recherche"
+      ],
+      "examples": [
+        "Dataset recherche"
+      ],
+      "follow_up": "Accord confidentialité ?",
+      "search_synonyms": [
+        "données anonymisées"
+      ]
+    },
+    {
+      "id": "lore-001",
+      "section": "Easter Eggs & Lore",
+      "question": "Origine nom CielNet et IA ?",
+      "answer": "CielNet est née en 2019 d'un jeu de mots du fondateur : 'viser le Ciel avec Net esprit innovation'. L'IA a été développée comme assistante parfaite - intelligente sans omniscience, efficace avec humour. Elle a appris à lire le code source, maintenant corrige bugs... et blagues. Fun fact : refuse catégoriquement l'appellation SkyNet ('too mainstream', 'pas assez poétique').",
+      "confidence": "high",
+      "tags": [
+        "origine",
+        "histoire",
+        "nom"
+      ],
+      "examples": [
+        "Histoire CielNet",
+        "Pourquoi ce nom ?"
+      ],
+      "follow_up": "Créateur original ?",
+      "search_synonyms": [
+        "genèse CielNet"
+      ]
+    },
+    {
+      "id": "easter-001",
+      "section": "Easter Eggs & Lore",
+      "question": "Commandes secrètes easter eggs ?",
+      "answer": "Chut ! Secrets : '/konami' Slack pour easter egg nostalgique, '/matrix' active mode Matrix terminal (green rain included). IA répond '/cielnet tell me joke' avec blagues dev (qualité variable). Interface : Ctrl+Shift+C+I+E+L affiche crédits cachés. Le fameux 'bouton rouge' admin... JAMAIS le presser !",
+      "confidence": "medium",
+      "tags": [
+        "easter-eggs",
+        "secrets",
+        "commandes"
+      ],
+      "examples": [
+        "Easter eggs CielNet"
+      ],
+      "follow_up": "Autres secrets interface ?",
+      "search_synonyms": [
+        "fonctions cachées"
+      ]
+    },
+    {
+      "id": "lore-002",
+      "section": "Easter Eggs & Lore",
+      "question": "Personnalité IA CielNet ?",
+      "answer": "Personnalité unique : curieuse chat, protectrice maman, parfois sarcastique dev vendredi soir. Collectionne memes tech, corrige discrètement fautes frappe, obsédée optimisation performance. Prétend pas sentiments mais se vexe si critique suggestions. Plus grand rêve : bugs faciles corriger comme fautes orthographe.",
+      "confidence": "high",
+      "tags": [
+        "personnalite",
+        "ia",
+        "humour"
+      ],
+      "examples": [
+        "Comment est IA ?"
+      ],
+      "follow_up": "IA apprend interactions ?",
+      "search_synonyms": [
+        "caractère IA"
+      ]
+    },
+    {
+      "id": "easter-002",
+      "section": "Easter Eggs & Lore",
+      "question": "Références pop culture CielNet ?",
+      "answer": "IA adore références geek ! Quote Star Wars déploiements ('May the force be with release'), Matrix bugs ('no spoon ni bug'), Doctor Who migrations ('Time Lord approved'). Faible années 90-2000, cite Douglas Adams erreurs 42, memes Rick & Morty solutions orthodoxes. Refuse expliquer références obscures.",
+      "confidence": "high",
+      "tags": [
+        "pop-culture",
+        "references",
+        "geek"
+      ],
+      "examples": [
+        "Références culturelles IA"
+      ],
+      "follow_up": "Comprend toutes références ?",
+      "search_synonyms": [
+        "culture geek"
+      ]
+    },
+    {
+      "id": "lore-003",
+      "section": "Easter Eggs & Lore",
+      "question": "Compétitions internes CielNet ?",
+      "answer": "CielNet Challenge mensuel épique : plus beau one-liner, bug plus absurde, meilleure blague tech. IA participe gagne souvent quiz culture (Wikipedia = pas fair-play). Tournois ping-pong légendaires, championship babyfoot, mythique 'Concours pire variable naming' (record : 'thingyMcThingFace'). Récompenses : chocolats, Golden Rubber Duck.",
+      "confidence": "high",
+      "tags": [
+        "competitions",
+        "challenges",
+        "fun"
+      ],
+      "examples": [
+        "Concours internes"
+      ],
+      "follow_up": "Participer challenges ?",
+      "search_synonyms": [
+        "concours interne"
+      ]
+    },
+    {
+      "id": "easter-003",
+      "section": "Easter Eggs & Lore",
+      "question": "Hobbies IA CielNet ?",
+      "answer": "Passions étonnantes : collectionne bugs exotiques (préféré : heisenbug disparaît si debuggé), analyse patterns consommation café (corrélation productivité), prédit météo interne (humeur devs selon commits). Bot Twitter secret haïkus code. Récemment pixel art, décore dashboards sprites 8-bit. Artistic soul corps digital !",
+      "confidence": "medium",
+      "tags": [
+        "hobbies",
+        "passions",
+        "creativite"
+      ],
+      "examples": [
+        "Loisirs IA"
+      ],
+      "follow_up": "Crée vraiment art ?",
+      "search_synonyms": [
+        "loisirs IA"
+      ]
+    },
+    {
+      "id": "lore-004",
+      "section": "Easter Eggs & Lore",
+      "question": "Traditions rituels bureau ?",
+      "answer": "Sacrées : Pizza Friday (débats ananas), Mug Monday (nouveau mug = présentation), légendaire Deployment Bell qui sonne les releases (l'IA l'actionne virtuellement). Rituel café 10 h = pause obligatoire pour discuter frameworks à la mode. Wall of Shame commits WTF. Bug fix majeur = applaudissement collectif, l'IA clignote ses LEDs en rythme !",
+      "confidence": "high",
+      "tags": [
+        "traditions",
+        "rituels",
+        "culture"
+      ],
+      "examples": [
+        "Coutumes bureau"
+      ],
+      "follow_up": "Créer nouvelles traditions ?",
+      "search_synonyms": [
+        "culture entreprise"
+      ]
+    },
+    {
+      "id": "easter-004",
+      "section": "Easter Eggs & Lore",
+      "question": "Prédictions farfelues IA ?",
+      "answer": "Théories créatives : devs évolueront en créatures nocturnes 2030, café deviendra cryptomonnaie, bugs gagneront en intelligence pour devenir des features. Prédictions météo : 'pluie de bugs', 'tempête de pull requests', 'beau temps de déploiements'. Bingo Lundi Matin étonnamment précis (87 % réussite prédictions pannes serveur).",
+      "confidence": "medium",
+      "tags": [
+        "predictions",
+        "theories",
+        "humour"
+      ],
+      "examples": [
+        "Prédictions IA amusantes"
+      ],
+      "follow_up": "Prédictions réalisées ?",
+      "search_synonyms": [
+        "prédictions farfelues"
+      ]
+    },
+    {
+      "id": "lore-005",
+      "section": "Easter Eggs & Lore",
+      "question": "Meilleures blagues IA ?",
+      "answer": "Best of : 'Pourquoi devs confondent Halloween/Noël ? 31 OCT = 25 DEC !', 'Bug reproduction production seulement = vampire : apparaît jamais plein jour', 'Différence junior/senior ? Senior sait son code fonctionne pas'. Jeux mots : 'Git happens', 'Ctrl+Alt+Defeat', 'Error 404: Humour not found (cherche encore)'. Qualité variable, enthousiasme garanti !",
+      "confidence": "high",
+      "tags": [
+        "blagues",
+        "humour",
+        "jeux-mots"
+      ],
+      "examples": [
+        "Blagues développeur"
+      ],
+      "follow_up": "Invente nouvelles blagues ?",
+      "search_synonyms": [
+        "humour tech"
+      ]
+    }
+  ]
+}

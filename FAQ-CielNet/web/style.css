@@ -1,0 +1,257 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #f7f9fc;
+  margin: 0;
+  color: #222;
+}
+
+header {
+  text-align: center;
+  background-color: #2962ff;
+  color: white;
+  padding: 2rem 1rem;
+}
+
+header .logo {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+main {
+  max-width: 1040px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 4rem;
+}
+
+#search {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.empty-state {
+  text-align: center;
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  border: 1px solid #d6e4ff;
+  box-shadow: 0 8px 20px rgba(17, 40, 120, 0.08);
+}
+
+.empty-state .hint {
+  color: #546e7a;
+  margin-top: 0.5rem;
+}
+
+.domain {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  border: 1px solid #d6e4ff;
+  box-shadow: 0 12px 30px rgba(17, 40, 120, 0.08);
+}
+
+.domain__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  border-bottom: 1px solid #e8f0ff;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.domain__header h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #0d47a1;
+}
+
+.domain__count {
+  font-size: 0.9rem;
+  color: #546e7a;
+  background: #e3f2fd;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+}
+
+.subsection + .subsection {
+  margin-top: 2rem;
+}
+
+.subsection h3 {
+  margin: 0 0 1rem;
+  color: #1a237e;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.subsection__count {
+  font-size: 0.8rem;
+  color: #546e7a;
+  font-weight: 500;
+}
+
+.faq-grid {
+  display: grid;
+  gap: 2.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.faq-card {
+  background: linear-gradient(180deg, #f9fbff 0%, #f1f6ff 100%);
+  border-radius: 18px;
+  padding: 1.75rem;
+  border: 1px solid #d6e4ff;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  min-height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(41, 98, 255, 0.15);
+}
+
+.faq-card h4 {
+  margin: 0;
+  color: #0d47a1;
+  font-size: 1.05rem;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.faq-card__answer p {
+  margin: 0 0 0.85rem;
+  color: #37474f;
+  line-height: 1.65;
+  font-size: 0.97rem;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.faq-card__answer p:last-child {
+  margin-bottom: 0;
+}
+
+.faq-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 0.25rem;
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  background: #e8f0ff;
+  color: #1a237e;
+}
+
+.badge--high {
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+.badge--medium {
+  background: #fff8e1;
+  color: #f57f17;
+}
+
+.badge--low {
+  background: #ffebee;
+  color: #b71c1c;
+}
+
+.faq-card__extra {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #d6e4ff;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.extra-block__label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1a237e;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.extra-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.extra-block ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #455a64;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.extra-block__text {
+  margin: 0;
+  color: #455a64;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+@media (max-width: 680px) {
+  .domain {
+    padding: 1.75rem;
+  }
+
+  .domain__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .faq-grid {
+    gap: 1.75rem;
+    grid-template-columns: 1fr;
+  }
+
+  .faq-card {
+    padding: 1.5rem;
+  }
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 1rem;
+  background-color: #e3f2fd;
+  color: #333;
+}
