@@ -7,15 +7,16 @@ import json
 from pathlib import Path
 from opensearchpy import OpenSearch, helpers
 from sentence_transformers import SentenceTransformer
-
-# Configuration OpenSearch
-OPENSEARCH_HOST = "localhost"
-OPENSEARCH_PORT = 9200
-INDEX_NAME = "cielnet_faq"
-INDEX_NAME_SEMANTIC = "cielnet_faq_semantic"
-
-# Modèle d'embedding pour la recherche sémantique
-EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+from config import (
+    OPENSEARCH_HOST,
+    OPENSEARCH_PORT,
+    INDEX_NAME,
+    INDEX_NAME_SEMANTIC,
+    INDEX_NAME_PIPELINE,
+    PIPELINE_NAME,
+    EMBEDDING_MODEL,
+    ML_MODEL_ID
+)
 
 # Chemin vers le fichier JSON (relatif à la racine du projet)
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -103,6 +104,100 @@ def create_semantic_index_if_not_exists(client, embedding_dim):
     }
     client.indices.create(index=INDEX_NAME_SEMANTIC, body=mapping)
     print(f"Index '{INDEX_NAME_SEMANTIC}' créé avec succès")
+
+
+def create_ingest_pipeline(client, model_id):
+    """Crée le pipeline d'ingestion avec génération automatique d'embeddings"""
+    pipeline_body = {
+        "description": "Pipeline pour générer automatiquement les embeddings",
+        "processors": [
+            {
+                "text_embedding": {
+                    "model_id": model_id,
+                    "field_map": {
+                        "question": "question_embedding",
+                        "answer": "answer_embedding"
+                    }
+                }
+            }
+        ]
+    }
+
+    try:
+        client.ingest.put_pipeline(id=PIPELINE_NAME, body=pipeline_body)
+        print(f"Pipeline '{PIPELINE_NAME}' créé avec succès")
+        return True
+    except Exception as e:
+        print(f"Erreur lors de la création du pipeline: {e}")
+        return False
+
+
+def get_ml_model_dimension(client, model_id):
+    """Récupère la dimension d'embedding du modèle ML déployé"""
+    try:
+        response = client.transport.perform_request(
+            "GET",
+            f"/_plugins/_ml/models/{model_id}"
+        )
+        dimension = response.get("model_config", {}).get("embedding_dimension")
+        if dimension:
+            print(f"Dimension du modèle ML: {dimension}")
+            return dimension
+        else:
+            print("Impossible de récupérer la dimension du modèle ML, utilisation de 768 par défaut")
+            return 768
+    except Exception as e:
+        print(f"Erreur lors de la récupération du modèle: {e}")
+        print("Utilisation de 768 par défaut")
+        return 768
+
+
+def create_pipeline_index_if_not_exists(client, embedding_dim):
+    """Crée l'index avec pipeline d'ingestion (le supprime s'il existe déjà)"""
+    if client.indices.exists(index=INDEX_NAME_PIPELINE):
+        print(f"Suppression de l'index existant '{INDEX_NAME_PIPELINE}'...")
+        client.indices.delete(index=INDEX_NAME_PIPELINE)
+
+    # Définition du mapping pour l'index avec pipeline
+    mapping = {
+        "settings": {
+            "index": {
+                "knn": True,
+                "knn.algo_param.ef_search": 100,
+                "default_pipeline": PIPELINE_NAME
+            }
+        },
+        "mappings": {
+            "properties": {
+                "id": {"type": "keyword"},
+                "section": {"type": "keyword"},
+                "question": {"type": "text", "analyzer": "french"},
+                "answer": {"type": "text", "analyzer": "french"},
+                "confidence": {"type": "keyword"},
+                "tags": {"type": "keyword"},
+                "question_embedding": {
+                    "type": "knn_vector",
+                    "dimension": embedding_dim,
+                    "method": {
+                        "name": "hnsw",
+                        "space_type": "cosinesimil",
+                        "engine": "lucene"
+                    }
+                },
+                "answer_embedding": {
+                    "type": "knn_vector",
+                    "dimension": embedding_dim,
+                    "method": {
+                        "name": "hnsw",
+                        "space_type": "cosinesimil",
+                        "engine": "lucene"
+                    }
+                }
+            }
+        }
+    }
+    client.indices.create(index=INDEX_NAME_PIPELINE, body=mapping)
+    print(f"Index '{INDEX_NAME_PIPELINE}' créé avec succès")
 
 
 def load_faq_data():
@@ -210,7 +305,7 @@ def main():
 
     # ===== Import dans l'index sémantique =====
     print("=" * 60)
-    print("IMPORT SÉMANTIQUE (avec embeddings)")
+    print("IMPORT SÉMANTIQUE (avec embeddings manuels)")
     print("=" * 60)
 
     print("\nChargement du modèle d'embedding...")
@@ -225,6 +320,34 @@ def main():
     client.indices.refresh(index=INDEX_NAME_SEMANTIC)
     count = client.count(index=INDEX_NAME_SEMANTIC)
     print(f"Nombre total de documents dans l'index '{INDEX_NAME_SEMANTIC}' : {count['count']}\n")
+
+    # ===== Import dans l'index avec pipeline =====
+    if ML_MODEL_ID:
+        print("=" * 60)
+        print("IMPORT AVEC PIPELINE D'INGESTION")
+        print("=" * 60)
+
+        print(f"\nUtilisation du modèle ML: {ML_MODEL_ID}")
+
+        # Récupérer la dimension du modèle ML
+        ml_embedding_dim = get_ml_model_dimension(client, ML_MODEL_ID)
+
+        if create_ingest_pipeline(client, ML_MODEL_ID):
+            create_pipeline_index_if_not_exists(client, ml_embedding_dim)
+
+            print("\nImport des données (embeddings générés automatiquement)...")
+            import_data(client, entries, INDEX_NAME_PIPELINE)
+
+            client.indices.refresh(index=INDEX_NAME_PIPELINE)
+            count = client.count(index=INDEX_NAME_PIPELINE)
+            print(f"Nombre total de documents dans l'index '{INDEX_NAME_PIPELINE}' : {count['count']}\n")
+        else:
+            print("Impossible de créer le pipeline.")
+    else:
+        print("\n" + "=" * 60)
+        print("IMPORT AVEC PIPELINE IGNORÉ")
+        print("=" * 60)
+        print("ML_MODEL_ID non configuré dans config.py")
 
     print("=" * 60)
     print("=== Import terminé avec succès ===")
