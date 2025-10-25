@@ -1,2 +1,35 @@
 opensearch-py==2.4.2
 sentence-transformers==2.7.0
+requests==2.31.0
+python-dotenv==1.0.0
+
+
+# Extraction PDF
+pymupdf
+
+# Vector store
+chromadb
+
+# LangChain core
+langchain
+langchain-community
+
+# Connecteurs spécifiques
+langchain-ollama
+langchain-chroma
+
+# Local models
+ollama
+
+# Tokenizer / modèles HF
+transformers>=4.44.2
+
+# Monitoring CLI (CPU/RAM)
+psutil>=5.9
+
+# Terminal rendering helpers
+wcwidth>=0.2.13
+
+# Tests
+pytest
+mutmut

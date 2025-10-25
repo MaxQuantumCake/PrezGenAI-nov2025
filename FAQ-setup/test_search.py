@@ -3,23 +3,30 @@
 Script de test de recherche dans l'index OpenSearch
 """
 
+import os
+from pathlib import Path
+from dotenv import load_dotenv
 from opensearchpy import OpenSearch
 from sentence_transformers import SentenceTransformer
-from config import (
-    OPENSEARCH_HOST,
-    OPENSEARCH_PORT,
-    INDEX_NAME,
-    INDEX_NAME_SEMANTIC,
-    INDEX_NAME_PIPELINE,
-    EMBEDDING_MODEL,
-    ML_MODEL_ID
-)
+
+# Charger les variables d'environnement depuis .env à la racine du projet
+PROJECT_ROOT = Path(__file__).parent.parent
+env_path = PROJECT_ROOT / '.env'
+load_dotenv(env_path)
+
+# Configuration depuis .env
+OPENSEARCH_URL = os.environ['OPENSEARCH_URL']
+INDEX_NAME = os.environ['FAQ_INDEX_NAME']
+INDEX_NAME_SEMANTIC = os.environ['FAQ_INDEX_NAME_SEMANTIC']
+INDEX_NAME_PIPELINE = os.environ['FAQ_INDEX_NAME_PIPELINE']
+EMBEDDING_MODEL = os.environ['EMBEDDING_MODEL']
+ML_MODEL_ID = os.environ['MODEL_ID']
 
 
 def create_opensearch_client():
     """Crée et retourne un client OpenSearch"""
     client = OpenSearch(
-        hosts=[{"host": OPENSEARCH_HOST, "port": OPENSEARCH_PORT}],
+        hosts=[OPENSEARCH_URL],
         http_compress=True,
         use_ssl=False,
         verify_certs=False,
@@ -168,7 +175,7 @@ def main():
         print("\n" + "=" * 70)
         print("RECHERCHE NEURAL IGNORÉE")
         print("=" * 70)
-        print("ML_MODEL_ID non configuré dans config.py\n")
+        print("MODEL_ID non configuré dans .env\n")
 
     print("=" * 70)
     print("=== Recherches terminées ===")
