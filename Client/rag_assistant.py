@@ -229,6 +229,29 @@ def select_llm_model(ollama_client):
             print(f"Choix invalide. Veuillez entrer un nombre entre 1 et {len(model_names)}.")
 
 
+def select_multiquery_mode():
+    """Sélection du mode multi-query"""
+    print("\nActiver le mode Multi-Query ?")
+    print("-" * 70)
+    print("Le LLM génèrera 3 questions alternatives pour enrichir la recherche")
+    print("(2 résultats par question = max 6 documents)")
+    print("-" * 70)
+    print("1. Non (recherche simple avec 5 résultats)")
+    print("2. Oui (recherche multi-query avec 6 résultats)")
+    print("-" * 70)
+
+    while True:
+        choice = input("\nVotre choix (1-2) : ").strip()
+        if choice == '1':
+            print("✓ Mode : Recherche simple")
+            return False
+        elif choice == '2':
+            print("✓ Mode : Multi-Query activé")
+            return True
+        else:
+            print("Choix invalide. Veuillez entrer 1 ou 2.")
+
+
 def perform_search(opensearch_client, embedding_model, corpus_type, search_mode, question, num_results=5):
     """Effectue la recherche selon le corpus et le mode sélectionnés"""
 
@@ -269,6 +292,43 @@ def perform_search(opensearch_client, embedding_model, corpus_type, search_mode,
             return pls_search.search_pls_neural(opensearch_client, ML_MODEL_ID, question, num_results)
         elif search_mode == 'hybrid':
             return pls_search.search_pls_hybrid(opensearch_client, ML_MODEL_ID, question, num_results)
+
+
+def generate_alternative_questions(ollama_client, original_question):
+    """Génère 3 questions alternatives pour améliorer la recherche"""
+    prompt = f"""Tu es un assistant spécialisé dans la reformulation de questions pour améliorer les recherches documentaires.
+
+QUESTION ORIGINALE: {original_question}
+
+TÂCHE: Génère exactement 3 questions alternatives ou complémentaires qui permettraient de trouver des informations pertinentes pour répondre à la question originale.
+
+CONSIGNES:
+- Les questions doivent aborder différents aspects ou angles de la question originale
+- Sois précis et concis
+- Utilise des termes et formulations variés
+- Format: Une question par ligne, numérotée 1., 2., 3.
+
+QUESTIONS ALTERNATIVES:"""
+
+    print(f"\n🔄 Génération de questions alternatives...")
+
+    full_response = ""
+    for chunk in ollama_client.generate(prompt, stream=False):
+        full_response += chunk
+
+    # Extraire les 3 questions
+    questions = []
+    for line in full_response.strip().split('\n'):
+        line = line.strip()
+        # Enlever les numéros et puces
+        for prefix in ['1.', '2.', '3.', '1)', '2)', '3)', '-', '*']:
+            if line.startswith(prefix):
+                line = line[len(prefix):].strip()
+                break
+        if line and len(questions) < 3:
+            questions.append(line)
+
+    return questions[:3]  # S'assurer d'avoir exactement 3 questions max
 
 
 def generate_rag_answer(ollama_client, question, context):
@@ -338,6 +398,7 @@ def main():
     search_mode = select_search_mode()
     llm_model = select_llm_model(ollama_client)
     ollama_client.model = llm_model
+    multiquery_enabled = select_multiquery_mode()
 
     # Charger le modèle d'embedding si nécessaire
     embedding_model = None
@@ -379,6 +440,7 @@ def main():
             search_mode = select_search_mode()
             llm_model = select_llm_model(ollama_client)
             ollama_client.model = llm_model
+            multiquery_enabled = select_multiquery_mode()
 
             # Recharger l'embedding model si nécessaire
             if search_mode == 'semantic' and embedding_model is None:
@@ -394,24 +456,108 @@ def main():
             continue
 
         # Effectuer la recherche
-        print(f"\n🔍 Recherche en cours ({search_mode})...")
-
         try:
-            response = perform_search(
-                opensearch_client,
-                embedding_model,
-                corpus_type,
-                search_mode,
-                question
-            )
+            if multiquery_enabled:
+                # Mode Multi-Query: générer 3 questions et chercher 2 résultats par question
+                alternative_questions = generate_alternative_questions(ollama_client, question)
 
-            # Afficher les résultats de recherche
-            if corpus_type == 'faq':
-                display_faq_results(response)
-                context = format_faq_results_as_context(response)
+                print(f"\n📋 Questions générées:")
+                for i, q in enumerate(alternative_questions, 1):
+                    print(f"  {i}. {q}")
+
+                # Chercher avec chaque question (2 résultats par question)
+                all_hits = []
+                doc_counter = 1
+
+                for i, alt_question in enumerate(alternative_questions, 1):
+                    print(f"\n🔍 Recherche {i}/3 ({search_mode})...")
+                    response = perform_search(
+                        opensearch_client,
+                        embedding_model,
+                        corpus_type,
+                        search_mode,
+                        alt_question,
+                        num_results=2
+                    )
+
+                    # Collecter les résultats
+                    hits = response["hits"]["hits"]
+                    for hit in hits:
+                        all_hits.append((doc_counter, hit))
+                        doc_counter += 1
+
+                # Afficher tous les résultats collectés
+                print(f"\n{'=' * 70}")
+                print(f"📚 Total: {len(all_hits)} documents collectés")
+                print(f"{'=' * 70}\n")
+
+                for doc_num, hit in all_hits:
+                    source = hit["_source"]
+                    score = hit["_score"]
+
+                    print(f"--- Document {doc_num} (score: {score:.4f}) ---")
+
+                    if corpus_type == 'faq':
+                        print(f"Q: {source['question']}")
+                        answer = source['answer']
+                        if len(answer) > 150:
+                            answer = answer[:150] + "..."
+                        print(f"R: {answer}")
+                        if source.get('tags'):
+                            print(f"Tags: {', '.join(source['tags'])}")
+                    else:
+                        print(f"Fichier: {source['filename']} - Page {source['page']}")
+                        if source.get('title'):
+                            print(f"Titre: {source['title']}")
+                        text = source['text']
+                        if len(text) > 150:
+                            text = text[:150] + "..."
+                        print(f"Texte: {text}")
+
+                    print()
+
+                # Formater le contexte à partir de tous les résultats
+                context_parts = []
+                for doc_num, hit in all_hits:
+                    source = hit["_source"]
+                    score = hit["_score"]
+
+                    if corpus_type == 'faq':
+                        context_parts.append(
+                            f"[Document {doc_num} - Pertinence: {score:.2f}]\n"
+                            f"Question: {source['question']}\n"
+                            f"Réponse: {source['answer']}\n"
+                        )
+                    else:
+                        title = source.get('title', '')
+                        title_str = f"Titre: {title}\n" if title else ""
+                        context_parts.append(
+                            f"[Document {doc_num} - Pertinence: {score:.2f}]\n"
+                            f"Source: {source['filename']} (Page {source['page']})\n"
+                            f"{title_str}"
+                            f"Contenu: {source['text']}\n"
+                        )
+
+                context = "\n".join(context_parts) if context_parts else "Aucun résultat trouvé."
+
             else:
-                display_pls_results(response)
-                context = format_pls_results_as_context(response)
+                # Mode simple: recherche classique
+                print(f"\n🔍 Recherche en cours ({search_mode})...")
+                response = perform_search(
+                    opensearch_client,
+                    embedding_model,
+                    corpus_type,
+                    search_mode,
+                    question
+                )
+
+                # Afficher les résultats de recherche
+                if corpus_type == 'faq':
+                    display_faq_results(response)
+                    context = format_faq_results_as_context(response)
+                else:
+                    display_pls_results(response)
+                    context = format_pls_results_as_context(response)
 
             # Générer la réponse avec le LLM
             generate_rag_answer(ollama_client, question, context)
