@@ -5,3 +5,7 @@ PourLaScienceText
 PourLaScienceClean
 .env
 .DS_Store
+analyse
+resultats
+*.zip
+Benchmark/**/*.csv

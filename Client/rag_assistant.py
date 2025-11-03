@@ -331,8 +331,20 @@ QUESTIONS ALTERNATIVES:"""
     return questions[:3]  # S'assurer d'avoir exactement 3 questions max
 
 
-def generate_rag_answer(ollama_client, question, context):
-    """Génère une réponse RAG avec Ollama"""
+def generate_rag_answer(ollama_client, question, context, stream=True, display=True):
+    """
+    Génère une réponse RAG avec Ollama
+
+    Args:
+        ollama_client: Client Ollama
+        question: Question à répondre
+        context: Contexte documentaire
+        stream: True pour streaming, False pour génération complète
+        display: True pour afficher la réponse, False pour silent mode
+
+    Returns:
+        str: La réponse complète générée
+    """
     prompt = f"""Tu es un assistant qui répond aux questions en te basant UNIQUEMENT sur le contexte fourni.
 
 CONTEXTE DOCUMENTAIRE:
@@ -348,16 +360,20 @@ INSTRUCTIONS:
 
 RÉPONSE:"""
 
-    print(f"\n{'=' * 70}")
-    print(f"🤖 Réponse de {ollama_client.model} :")
-    print(f"{'=' * 70}\n")
+    if display:
+        print(f"\n{'=' * 70}")
+        print(f"🤖 Réponse de {ollama_client.model} :")
+        print(f"{'=' * 70}\n")
 
     full_response = ""
-    for chunk in ollama_client.generate(prompt, stream=True):
-        print(chunk, end='', flush=True)
+    for chunk in ollama_client.generate(prompt, stream=stream):
+        if display:
+            print(chunk, end='', flush=True)
         full_response += chunk
 
-    print("\n")
+    if display:
+        print("\n")
+
     return full_response
 
 

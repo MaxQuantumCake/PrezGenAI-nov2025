@@ -1,0 +1,100 @@
+1. Comment puis-je demander un changement d’horaires de travail pour mieux concilier vie personnelle et professionnelle ?
+2. Quels documents faut‑il fournir pour valider une demande de congé maternité ?
+3. Existe‑t‑il une procédure spécifique pour les salariés à distance qui souhaitent revenir au bureau ?
+4. Quelles options de repas sont disponibles dans le nouveau quartier d’affaires où s’installera notre filiale ?
+5. Comment fonctionne la politique de télétravail pour les équipes de support client ?
+6. Que faire si je remarque une anomalie de sécurité sur mon poste de travail ?
+7. Quelle est la démarche pour déclarer un incident de phishing reçu sur mon adresse e‑mail professionnelle ?
+8. Les badges d’accès aux bureaux peuvent‑ils être réactivés après une suspension ?
+9. Quelles sont les différences entre un VPN interne et un VPN externe pour les utilisateurs mobiles ?
+10. Où puis‑je trouver la liste des rôles et permissions disponibles dans notre portail d’authentification ?
+11. Comment récupérer un mot de passe oublié pour accéder à la plateforme de gestion de projets ?
+12. Puis‑je configurer l’authentification multifacteur sur mon téléphone personnel ?
+13. Comment créer une clé SSH pour mon serveur local de développement ?
+14. Quels outils de monitoring sont disponibles pour surveiller les performances de nos micro‑services ?
+15. Où puis‑je obtenir la documentation complète de l’API de facturation interne ?
+16. Comment gérer les secrets d’application dans le pipeline CI/CD ?
+17. Quels sont les critères de qualité de code que nos équipes doivent respecter ?
+18. Que faire si mon environnement Docker local ne démarre plus après la mise à jour de l’image ?
+19. Est‑il possible d’utiliser mon propre matériel pour le développement (BYOD) ?
+20. Comment demander un accès temporaire à un prestataire externe pour une tâche ponctuelle ?
+21. Quelle est la procédure pour créer un compte de service dédié à l’intégration avec Salesforce ?
+22. Comment sécuriser les sessions utilisateur dans notre application web ?
+23. Quels sont les critères d’attribution des quotas de stockage pour chaque équipe ?
+24. Comment vérifier la compatibilité de la dernière version de CielWork avec nos applications tierces ?
+25. Où puis‑je exporter mes données utilisateur au format Excel depuis le module de reporting ?
+26. Quelles sont les étapes pour créer un ticket de support concernant un bug critique ?
+27. Quels délais de réponse le support garantit‑il pour les incidents critiques ?
+28. Comment différencier un bug d’une demande de fonctionnalité dans le système de tickets ?
+29. Quelles informations détaillées dois‑je fournir pour que l’équipe de dev puisse reproduire un problème ?
+30. Où puis‑je rechercher des réponses dans la base de connaissances pour un problème de connexion ?
+31. Que faire en cas d’urgence hors des heures de support standard ?
+32. Comment donner un retour constructif sur la qualité du support reçu ?
+33. Quelles options de self‑service sont disponibles pour réinitialiser les paramètres de compte ?
+34. Quels sont les modules de formation proposés aux utilisateurs pour la nouvelle plateforme ?
+35. Quels sont les plafonds de taux d’utilisation des API pour chaque service ?
+36. Comment exporter les données d’un utilisateur spécifique sans affecter la base ?
+37. Quelles étapes suivre pour intégrer un nouveau partenaire via l’API de collaboration ?
+38. Où puis‑je consulter les métriques de satisfaction client liées à nos services ?
+39. Le support est‑il disponible en plusieurs langues pour les utilisateurs internationaux ?
+40. Quelle est la procédure pour escalader un dossier au management en cas de blocage majeur ?
+41. Comment les retours produit sont‑ils intégrés dans le cycle de développement ?
+42. Quels sont les processus de sécurisation d’un déploiement en production ?
+43. Comment configurer les alertes de monitoring pour éviter les pannes en production ?
+44. Quelle est la stratégie pour gérer les clusters Kubernetes dans notre environnement cloud ?
+45. Quels plans de sauvegarde et de récupération avons‑nous mis en place ?
+46. Comment appliquer l’Infrastructure as Code dans notre architecture ?
+47. Quelles pratiques suivons‑nous pour la gestion des secrets en production ?
+48. Comment planifier le scaling et la capacité de nos services pour la prochaine vague d’utilisateurs ?
+49. Quel est le processus de gestion des incidents majeurs ?
+50. Quels contrôles de sécurité appliquons‑nous sur l’infrastructure interne ?
+51. Comment optimiser les coûts d’infrastructure sans sacrifier la performance ?
+52. Où puis‑je centraliser et analyser les logs de nos services critiques ?
+53. Quel est le plan de reprise d’activité en cas de sinistre majeur ?
+54. Comment implémenter un système RAG (Red‑Amber‑Green) pour nos tableaux de bord ?
+55. Quelles stratégies de découpage de documents recommandons‑nous pour l’analyse de texte ?
+56. Quels modèles d’embedding devraient être comparés pour notre moteur de recherche ?
+57. Quelle base de données vectorielle choisir‑nous pour le stockage des embeddings ?
+58. Comment héberger un modèle LLM en local pour des raisons de confidentialité ?
+59. Quelles bonnes pratiques de prompt engineering appliquer‑on pour améliorer les réponses RAG ?
+60. Quelles mesures assurent la conformité RGPD d’un système RAG ?
+61. Comment réduire les coûts d’un RAG en production ?
+62. Quelle est la procédure en cas d’incident de sécurité lié à un accès non autorisé ?
+63. Comment gérer les vulnérabilités et appliquer les correctifs rapidement ?
+64. Comment se déroulent les revues d’accès et les certifications pour les utilisateurs ?
+65. Comment classifie‑nous et protège‑nous les données sensibles de l’entreprise ?
+66. Quels standards de chiffrement utilisons‑nous pour les données au repos ?
+67. Quelles mesures de prévention du phishing sont en place pour nos employés ?
+68. Comment fonctionne notre architecture Zero Trust interne ?
+69. Quels programmes de threat hunting sont en cours pour détecter les menaces internes ?
+70. Comment assure‑nous la conformité aux référentiels de sécurité tels que ISO 27001 ?
+71. Quelle est la démarche pour appliquer le Privacy by Design dans nos nouveaux développements ?
+72. Comment pilotons‑nous la gouvernance des identités et des accès dans l’entreprise ?
+73. Quels mécanismes sécurisent un cloud multi‑provider pour nos données critiques ?
+74. Comment détectons‑nous les menaces internes provenant des employés ?
+75. Quelles mesures garantissent la continuité d’activité en cas d’incident de sécurité majeur ?
+76. Quelle est la procédure de revue des contrats avec les fournisseurs de services cloud ?
+77. Comment assurons‑nous la conformité RGPD au quotidien dans nos processus ?
+78. Quels sont les droits de propriété intellectuelle de l’entreprise sur les logiciels développés ?
+79. Quelles obligations de la loi du travail devons‑nous respecter en matière de télétravail ?
+80. Quelles obligations légales en matière de travail à distance devons‑nous respecter ?
+81. Comment notre équipe veille‑t‑elle aux évolutions réglementaires en matière de cybersécurité ?
+82. Comment notre IA respecte‑t‑elle les nouvelles régulations européennes sur l’intelligence artificielle ?
+83. Dans le cas d’un bug sur la plateforme de gestion de tickets, quelle est la procédure de réparation rapide ?
+84. Comment résoudre un problème de lenteur sur le portail de gestion de projets après mise à jour ?
+85. Que faire si le système d’hébergement LLM local ne respecte pas la politique de confidentialité ?
+86. Quels outils internes permettent‑nous de créer des listes d’emails suspects sans bloquer le service mail ?
+87. Comment récupérer des données supprimées accidentellement depuis la base de données de production ?
+88. Quelles démarches suivre pour demander l’accès à des données anonymisées pour la recherche interne ?
+89. Où puis‑je trouver l’historique des accès à l’intranet de l’entreprise depuis mon compte ?
+90. Quelle est la politique de classification des badges d’accès pour les nouveaux employés ?
+91. Comment les équipes internes peuvent‑elles demander l’ajout d’un nouvel événement social ?
+92. Existe‑t‑il un plan de formation spécifique pour les développeurs souhaitant travailler sur l’IA de notre produit ?
+93. Quelles sont les prochaines compétitions internes prévues pour renforcer la cohésion d’équipe ?
+94. Quels sont les rituels de bureau que nous avons mis en place pour faciliter la collaboration ?
+95. Y‑a‑t‑il des références à la culture pop dans la documentation technique de l’IA ?
+96. Quels sont les plaisants prédictions que l’IA peut générer lors des réunions d’équipe ?
+97. Où puis‑je découvrir les blagues internes que l’IA raconte pour détendre l’ambiance ?
+98. Existe‑t‑il des easter eggs cachés dans notre plateforme que je pourrais découvrir ?
+99. Comment connaître l’origine et l’histoire derrière le nom « CielNet » ?
+100. Quels sont les hobbies des membres de l’équipe IA et comment les partage‑nous dans l’entreprise ?

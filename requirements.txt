@@ -27,6 +27,9 @@ transformers>=4.44.2
 # Monitoring CLI (CPU/RAM)
 psutil>=5.9
 
+# Data analysis
+pandas
+
 # Terminal rendering helpers
 wcwidth>=0.2.13
 
