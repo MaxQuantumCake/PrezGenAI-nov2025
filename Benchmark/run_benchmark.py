@@ -5,19 +5,15 @@ Script de benchmark pour tester les différentes combinaisons RAG
 
 import sys
 import csv
+import json
 import time
+import shutil
+import subprocess
 import threading
+import queue
 from pathlib import Path
 from datetime import datetime
 import psutil
-
-# Essayer d'importer GPUtil pour le monitoring GPU
-try:
-    import GPUtil
-    GPU_AVAILABLE = True
-except ImportError:
-    GPU_AVAILABLE = False
-    print("⚠️  GPUtil non disponible - monitoring GPU désactivé")
 
 # Ajouter le dossier Client au path pour importer les modules
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -32,29 +28,71 @@ from ollama_client import OllamaClient
 
 
 class ResourceMonitor:
-    """Monitore l'utilisation CPU, RAM et GPU pendant l'exécution"""
+    """Monitore l'utilisation CPU, RAM et GPU avec macmon sur Apple Silicon"""
 
-    def __init__(self):
+    def __init__(self, use_macmon=True):
+        self.use_macmon = use_macmon
         self.monitoring = False
         self.monitor_thread = None
+        self.reader_thread = None
+        self.macmon_proc = None
+        self.data_queue = queue.Queue()
         self.cpu_samples = []
         self.ram_samples = []
         self.gpu_samples = []
 
+    def _read_macmon_output(self):
+        """Thread séparé pour lire la sortie macmon de manière non-bloquante"""
+        try:
+            for line in self.macmon_proc.stdout:
+                self.data_queue.put(line)
+        except Exception:
+            pass
+
     def start(self):
-        """Démarre le monitoring"""
+        """Démarre le monitoring avec macmon ou psutil"""
         self.monitoring = True
         self.cpu_samples = []
         self.ram_samples = []
         self.gpu_samples = []
+
+        # Démarrer macmon seulement si demandé
+        if self.use_macmon and shutil.which("macmon"):
+            try:
+                self.macmon_proc = subprocess.Popen(
+                    ["macmon", "pipe", "-i", "100"],  # 100ms interval (plus rapide)
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.DEVNULL,
+                    text=True,
+                    bufsize=1,  # Line buffered
+                )
+                # Thread dédié pour lire macmon (non-bloquant)
+                self.reader_thread = threading.Thread(target=self._read_macmon_output, daemon=True)
+                self.reader_thread.start()
+                # Attendre un peu que macmon démarre
+                time.sleep(0.2)
+            except Exception:
+                self.macmon_proc = None
+
         self.monitor_thread = threading.Thread(target=self._monitor_loop, daemon=True)
         self.monitor_thread.start()
 
     def stop(self):
         """Arrête le monitoring et retourne les statistiques"""
+        # Si on utilise macmon, attendre pour capturer des données
+        if self.use_macmon and self.macmon_proc:
+            time.sleep(0.5)
+
         self.monitoring = False
         if self.monitor_thread:
             self.monitor_thread.join(timeout=1.0)
+
+        if self.macmon_proc:
+            self.macmon_proc.terminate()
+            try:
+                self.macmon_proc.wait(timeout=1.0)
+            except subprocess.TimeoutExpired:
+                self.macmon_proc.kill()
 
         stats = {
             'cpu_avg': None,
@@ -79,34 +117,67 @@ class ResourceMonitor:
 
         return stats
 
+    def _parse_percent(self, value):
+        """Convertir les valeurs macmon en pourcentage"""
+        if value is None:
+            return None
+        if isinstance(value, (int, float)):
+            return float(value * 100.0) if value <= 1 else float(value)
+        return None
+
     def _monitor_loop(self):
         """Boucle de monitoring (s'exécute dans un thread séparé)"""
-        while self.monitoring:
-            try:
-                # CPU (pourcentage)
-                cpu_percent = psutil.cpu_percent(interval=0.1)
-                self.cpu_samples.append(cpu_percent)
+        if self.macmon_proc:
+            while self.monitoring:
+                try:
+                    # Essayer de lire depuis la queue avec timeout
+                    line = self.data_queue.get(timeout=0.1)
 
-                # RAM (pourcentage)
-                ram = psutil.virtual_memory()
-                self.ram_samples.append(ram.percent)
+                    data = json.loads(line)
 
-                # GPU (si disponible)
-                if GPU_AVAILABLE:
-                    try:
-                        gpus = GPUtil.getGPUs()
-                        if gpus:
-                            # Prendre l'utilisation moyenne de tous les GPUs
-                            avg_gpu_load = sum(gpu.load * 100 for gpu in gpus) / len(gpus)
-                            self.gpu_samples.append(avg_gpu_load)
-                    except Exception:
-                        pass  # Ignorer les erreurs GPU silencieusement
+                    # CPU - format: [freq_mhz, usage_ratio]
+                    cpu_source = data.get("pcpu_usage")
+                    if cpu_source and isinstance(cpu_source, list) and len(cpu_source) >= 2:
+                        cpu_ratio = cpu_source[1]
+                        if isinstance(cpu_ratio, (int, float)):
+                            cpu_pct = float(cpu_ratio * 100.0)
+                            self.cpu_samples.append(cpu_pct)
 
-                # Pause entre les échantillons
-                time.sleep(0.5)
+                    # RAM - format: {"ram_usage": bytes, "ram_total": bytes}
+                    mem_source = data.get("memory")
+                    if mem_source and isinstance(mem_source, dict):
+                        ram_usage = mem_source.get("ram_usage")
+                        ram_total = mem_source.get("ram_total")
+                        if ram_usage is not None and ram_total and ram_total > 0:
+                            ram_pct = (ram_usage / ram_total) * 100.0
+                            self.ram_samples.append(ram_pct)
 
-            except Exception:
-                pass  # Ignorer les erreurs de monitoring
+                    # GPU - format: [freq_mhz, usage_ratio]
+                    gpu_source = data.get("gpu_usage")
+                    if gpu_source and isinstance(gpu_source, list) and len(gpu_source) >= 2:
+                        gpu_ratio = gpu_source[1]
+                        if isinstance(gpu_ratio, (int, float)):
+                            gpu_pct = float(gpu_ratio * 100.0)
+                            self.gpu_samples.append(gpu_pct)
+
+                except queue.Empty:
+                    # Pas de données dans la queue, continuer
+                    continue
+                except json.JSONDecodeError:
+                    continue
+        else:
+            # Fallback: utiliser psutil uniquement
+            while self.monitoring:
+                try:
+                    cpu_percent = psutil.cpu_percent(interval=0.5)
+                    self.cpu_samples.append(cpu_percent)
+
+                    ram = psutil.virtual_memory()
+                    self.ram_samples.append(ram.percent)
+
+                    time.sleep(0.5)
+                except Exception:
+                    pass
 
 
 def load_questions(filepath, limit=None):
@@ -163,8 +234,8 @@ def benchmark_search(opensearch_client, question, corpus, search_mode):
     Returns:
         dict: Résultats avec temps de réponse
     """
-    # Démarrer le monitoring des ressources
-    monitor = ResourceMonitor()
+    # Démarrer le monitoring des ressources (psutil uniquement, plus rapide)
+    monitor = ResourceMonitor(use_macmon=False)
     monitor.start()
 
     # Démarrer le chronomètre
@@ -560,8 +631,8 @@ def main():
                 print(f"  - Questions traitées: {len(successful_results)}/{total}")
                 print(f"  - Temps moyen: {avg_time:.3f}s")
 
-            print(f"\n⏸️  Pause de 2 minutes avant la prochaine étape...")
-            time.sleep(120)
+            print(f"\n⏸️  Pause de 5 minutes avant la prochaine étape...")
+            time.sleep(600)
 
         # Benchmark PLS pour ce mode
         if pls_questions:
@@ -602,8 +673,8 @@ def main():
                 print(f"  - Questions traitées: {len(successful_results)}/{total}")
                 print(f"  - Temps moyen: {avg_time:.3f}s")
 
-            print(f"\n⏸️  Pause de 2 minutes avant la prochaine étape...")
-            time.sleep(120)
+            print(f"\n⏸️  Pause de 5 minutes avant la prochaine étape...")
+            time.sleep(600)
 
     # Résumé
     print("\n" + "=" * 70)
@@ -687,8 +758,8 @@ def main():
                             print(f"  - Questions traitées: {len(successful_results)}/{total}")
                             print(f"  - Temps moyen: {avg_time:.3f}s")
 
-                        print(f"\n⏸️  Pause de 3 minutes avant la prochaine étape...")
-                        time.sleep(120)
+                        print(f"\n⏸️  Pause de 5 minutes avant la prochaine étape...")
+                        time.sleep(600)
 
                     # Benchmark RAG PLS pour cette combinaison
                     if pls_questions:
@@ -742,8 +813,8 @@ def main():
                                    llm_model == llm_models[-1] and
                                    multiquery_enabled == multiquery_modes[-1])
                         if not is_last:
-                            print(f"\n⏸️  Pause de 2 minutes avant la prochaine étape...")
-                            time.sleep(120)
+                            print(f"\n⏸️  Pause de 5 minutes avant la prochaine étape...")
+                            time.sleep(600)
 
     print("\n" + "=" * 70)
     print("=== Benchmark terminé ===")
